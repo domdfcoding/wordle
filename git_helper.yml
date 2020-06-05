@@ -1,0 +1,47 @@
+modname: wordle
+copyright_years: "2020"
+author: "Dominic Davis-Foster"
+email: "dominic@davis-foster.co.uk"
+version: "0.1.3"
+username: "domdfcoding"
+license: 'LGPLv3+'
+short_desc: 'Create a wordcloud for a Git repository.'
+
+enable_tests: False
+enable_conda: False
+
+#console_scripts:
+#  - "msp2lib=msp2lib:main"
+
+python_deploy_version: 3.6
+
+# Versions to run tests for
+python_versions:
+  - '3.6'
+  - '3.7'
+  - '3.8'
+
+#travis_extra_install_post:
+#  - "pip install -r manpage-builder/requirements.txt"
+
+# travis secure password for PyPI
+#travis_pypi_secure: ""
+
+# additional lines for MANIFEST.in
+#manifest_additional:
+#  - "include msp2lib.1"
+#  - "recursive-include msp2lib *"
+
+#classifiers:
+#  - "Development Status :: 3 - Alpha"
+#  - 'Development Status :: 4 - Beta'
+#  - "Development Status :: 5 - Production/Stable"
+#  - "Development Status :: 6 - Mature"
+#  - "Development Status :: 7 - Inactive"
+#  - "Environment :: Console"
+#  - "Operating System :: POSIX :: Linux"
+#  - 'Intended Audience :: Developers'
+#  - "Intended Audience :: End Users/Desktop"
+#  - "Intended Audience :: Science/Research"
+#  - 'Topic :: Software Development :: Libraries :: Python Modules'
+#  - 'Topic :: Utilities'
