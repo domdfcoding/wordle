@@ -8,6 +8,8 @@ wordle
 
 .. end short_desc
 
+Can also create wordclouds from directories of source files or a single source file.
+
 .. start shields 
 
 .. list-table::
@@ -104,6 +106,7 @@ wordle
 	:caption: Documentation
 
 	API Reference<docs>
+	examples
 	Source
 	Building
 

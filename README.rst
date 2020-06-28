@@ -8,6 +8,7 @@ wordle
 
 .. end short_desc
 
+Can also create wordclouds from directories of source files or a single source file.
 
 .. start shields 
 
@@ -77,6 +78,13 @@ wordle
 .. end shields
 
 |
+
+Examples
+------------
+
+.. image:: https://raw.githubusercontent.com/domdfcoding/wordle/master/examples/c_wordcloud.png
+
+Further examples are shown in the "Examples" directory
 
 Installation
 --------------
