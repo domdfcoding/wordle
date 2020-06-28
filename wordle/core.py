@@ -2,7 +2,7 @@
 #
 #  core.py
 """
-Core functionality
+Core functionality.
 """
 #
 #  Copyright (c) 2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
@@ -28,7 +28,6 @@ Core functionality
 #
 
 # stdlib
-import json
 import os
 import pathlib
 import re
@@ -36,21 +35,26 @@ import tempfile
 from collections import Counter
 from string import punctuation
 from typing import Callable, Optional, Sequence, Union
+import typing
 
-# this package
-import numpy
-import pygments.lexers
-import pygments.token
-import pygments.util
-from dulwich import porcelain
-from wordcloud import WordCloud
+# 3rd party
+import numpy  # type: ignore
+import pygments.lexers  # type: ignore
+import pygments.token  # type: ignore
+import pygments.util  # type: ignore
+from dulwich import porcelain  # type: ignore
+from wordcloud import WordCloud  # type: ignore
+
 
 __all__ = ["Wordle", "export_wordcloud", "get_tokens"]
 
 
+PathLike = Union[str, pathlib.Path, os.PathLike]
+
+
 class Wordle(WordCloud):
 	r"""
-	Generate word clouds from source code
+	Generate word clouds from source code.
 
 	:param font_path: Font path to the font that will be used (OTF or TTF).
 		Defaults to DroidSansMono path on a Linux machine. If you are on
@@ -172,15 +176,15 @@ class Wordle(WordCloud):
 			prefer_horizontal: float = 0.90,
 			mask: Optional[numpy.ndarray] = None,
 			contour_width: float = 0,
-			contour_color: str = 'black',
+			contour_color: str = "black",
 			scale: float = 1,
 			min_font_size: int = 4,
 			font_step: int = 1,
 			max_words: int = 200,
-			background_color: str = 'black',
+			background_color: str = "black",
 			max_font_size: Optional[int] = None,
 			mode: str = "RGB",
-			relative_scaling: Union[str, float] = 'auto',
+			relative_scaling: Union[str, float] = "auto",
 			color_func: Optional[Callable] = None,
 			regexp: Optional[str] = None,
 			collocations: bool = True,
@@ -191,7 +195,7 @@ class Wordle(WordCloud):
 			# margin=2,
 			# ranks_only=None,
 			random_state=None,
-			):
+			) -> None:
 
 		super().__init__(
 				font_path=font_path,
@@ -256,10 +260,10 @@ class Wordle(WordCloud):
 
 	def generate_from_directory(
 			self,
-			directory: Union[str, pathlib.Path, os.PathLike],
-			outfile: Optional[Union[str, pathlib.Path, os.PathLike]] = None,
+			directory: PathLike,
+			outfile: Optional[PathLike] = None,
 			exclude_words: Optional[Sequence[str]] = None,
-			exclude_dirs: Optional[Sequence[Union[str, pathlib.Path, os.PathLike]]] = None,
+			exclude_dirs: Optional[Sequence[PathLike]] = None,
 			max_font_size: Optional[int] = None
 			) -> "Wordle":
 		"""
@@ -292,7 +296,8 @@ class Wordle(WordCloud):
 					return True
 			return False
 
-		word_counts = Counter()
+		word_counts: typing.Counter[str] = Counter()
+
 		for file in directory.rglob("**/*.*"):
 			if file.is_file() and not is_excluded(file):
 				word_counts += get_tokens(file)
@@ -303,7 +308,7 @@ class Wordle(WordCloud):
 
 		self.generate_from_frequencies(word_counts, max_font_size=max_font_size)
 
-		if outfile:
+		if outfile is not None:
 			export_wordcloud(self, outfile)
 
 		# with open("wordcount.json", "w") as fp:
@@ -314,9 +319,9 @@ class Wordle(WordCloud):
 	def generate_from_git(
 			self,
 			git_url: str,
-			outfile: Optional[Union[str, pathlib.Path, os.PathLike]] = None,
+			outfile: Optional[PathLike] = None,
 			exclude_words: Optional[Sequence[str]] = None,
-			exclude_dirs: Optional[Sequence[Union[str, pathlib.Path, os.PathLike]]] = None,
+			exclude_dirs: Optional[Sequence[PathLike]] = None,
 			max_font_size: Optional[int] = None
 			) -> "Wordle":
 		"""
@@ -348,10 +353,11 @@ class Wordle(WordCloud):
 		return self
 
 
-def export_wordcloud(word_cloud: WordCloud, outfile: Optional[Union[str, pathlib.Path, os.PathLike]]) -> None:
+def export_wordcloud(word_cloud: WordCloud, outfile: PathLike) -> None:
 	"""
 	Export a wordcloud to a file.
 
+	:param word_cloud:
 	:param outfile: The file to export the wordcloud to
 	"""
 
@@ -363,7 +369,7 @@ def export_wordcloud(word_cloud: WordCloud, outfile: Optional[Union[str, pathlib
 		word_cloud.to_file(str(outfile))
 
 
-def get_tokens(filename: Union[str, pathlib.Path, os.PathLike]) -> Counter:
+def get_tokens(filename: PathLike) -> typing.Counter[str]:
 	"""
 
 	:param filename: The file to parse
@@ -371,7 +377,7 @@ def get_tokens(filename: Union[str, pathlib.Path, os.PathLike]) -> Counter:
 	:return: A count of words etc. in the file
 	"""
 
-	total = Counter()
+	total: typing.Counter[str] = Counter()
 
 	if not isinstance(filename, pathlib.Path):
 		filename = pathlib.Path(filename)
@@ -386,9 +392,9 @@ def get_tokens(filename: Union[str, pathlib.Path, os.PathLike]) -> Counter:
 			continue
 
 		if token[0] in pygments.token.Text:
-			if token[1] == "\n":
+			if token[1] == '\n':
 				continue
-			if token[1] == " ":
+			if token[1] == ' ':
 				continue
 			if re.match(r"^\t*$", token[1]):
 				continue
@@ -396,7 +402,7 @@ def get_tokens(filename: Union[str, pathlib.Path, os.PathLike]) -> Counter:
 				continue
 
 		if token[0] in pygments.token.String:
-			if token[1] == "\"":
+			if token[1] == '"':
 				continue
 
 			if token[0] in pygments.token.String.Escape:
@@ -430,20 +436,20 @@ def get_tokens(filename: Union[str, pathlib.Path, os.PathLike]) -> Counter:
 		if re.match("^:*$", token[1]):
 			continue
 
-		total += Counter(token[1].split(" "))
+		total += Counter(token[1].split(' '))
 
-	if "" in total:
-		del total[""]
+	if '' in total:
+		del total['']
 
 	for char in punctuation:
 		if char in total:
 			del total[char]
 
-	all_words = Counter()
+	all_words: typing.Counter[str] = Counter()
 
 	for word in total:
-		if word.endswith(":"):
-			all_words[word.rstrip(":")] = total[word]
+		if word.endswith(':'):
+			all_words[word.rstrip(':')] = total[word]
 		else:
 			all_words[word] = total[word]
 
