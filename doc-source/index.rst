@@ -78,7 +78,7 @@ Can also create wordclouds from directories of source files or a single source f
 .. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/wordle
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/wordle/v0.1.3
+.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/wordle/v0.1.0
 	:target: https://github.com/domdfcoding/wordle/pulse
 	:alt: GitHub commits since tagged version
 
