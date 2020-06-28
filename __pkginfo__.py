@@ -76,6 +76,8 @@ install_requires = (repo_root / "requirements.txt").read_text(encoding="utf-8").
 extras_require = {'all': []}
 
 classifiers = [
+		'Development Status :: 3 - Alpha',
+		'Intended Audience :: Developers',
 		'License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)',
 		'Operating System :: OS Independent',
 		'Programming Language :: Python',
@@ -84,6 +86,8 @@ classifiers = [
 		'Programming Language :: Python :: 3.7',
 		'Programming Language :: Python :: 3.8',
 		'Programming Language :: Python :: Implementation :: CPython',
+		'Topic :: Software Development :: Libraries :: Python Modules',
+		'Topic :: Utilities',
 
 		]
 
