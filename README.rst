@@ -10,7 +10,7 @@ wordle
 
 Can also create wordclouds from directories of source files or a single source file.
 
-.. start shields 
+.. start shields
 
 .. list-table::
 	:stub-columns: 1
@@ -30,7 +30,7 @@ Can also create wordclouds from directories of source files or a single source f
 .. |docs| image:: https://img.shields.io/readthedocs/wordle/latest?logo=read-the-docs
 	:target: https://wordle.readthedocs.io/en/latest/?badge=latest
 	:alt: Documentation Status
-	
+
 .. |docs_check| image:: https://github.com/domdfcoding/wordle/workflows/Docs%20Check/badge.svg
 	:target: https://github.com/domdfcoding/wordle/actions?query=workflow%3A%22Docs+Check%22
 	:alt: Docs Check Status
@@ -59,7 +59,7 @@ Can also create wordclouds from directories of source files or a single source f
 	:target: https://pypi.org/project/wordle/
 	:alt: PyPI - Package Version
 
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/wordle
+.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/wordle?logo=python&logoColor=white
 	:target: https://pypi.org/project/wordle/
 	:alt: PyPI - Supported Python Versions
 
@@ -72,8 +72,8 @@ Can also create wordclouds from directories of source files or a single source f
 	:alt: PyPI - Wheel
 
 .. |license| image:: https://img.shields.io/github/license/domdfcoding/wordle
-	:alt: License
 	:target: https://github.com/domdfcoding/wordle/blob/master/LICENSE
+	:alt: License
 
 .. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/wordle
 	:alt: GitHub top language
