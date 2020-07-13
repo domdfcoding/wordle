@@ -50,7 +50,7 @@ pypi_name = "wordle"
 import_name = "wordle"
 py_modules = []
 entry_points = {
-		"console_scripts": []
+		"console_scripts": [],
 		}
 
 __license__ = "GNU Lesser General Public License v3 or later (LGPLv3+)"
