@@ -32,10 +32,10 @@ import os
 import pathlib
 import re
 import tempfile
+import typing
 from collections import Counter
 from string import punctuation
 from typing import Callable, Optional, Sequence, Union
-import typing
 
 # 3rd party
 import numpy  # type: ignore
@@ -45,9 +45,7 @@ import pygments.util  # type: ignore
 from dulwich import porcelain  # type: ignore
 from wordcloud import WordCloud  # type: ignore
 
-
 __all__ = ["Wordle", "export_wordcloud", "get_tokens"]
-
 
 PathLike = Union[str, pathlib.Path, os.PathLike]
 

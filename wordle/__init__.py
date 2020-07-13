@@ -27,7 +27,6 @@ Create wordclouds from git repositories, directories and source files.
 #  License: MIT
 #
 
-
 # this package
 from wordle.core import *
 

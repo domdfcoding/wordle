@@ -30,4 +30,3 @@ Folium git repository
    :linenos:
 
 .. image:: examples/folium_wordcloud.png
-

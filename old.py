@@ -68,8 +68,6 @@ ignore_dirs = [
 		git_path + "/CalibreSearch",
 		]
 
-
-
 py_kwlist = keyword.kwlist
 
 c_kwlist = [

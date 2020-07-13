@@ -10,4 +10,3 @@ filename = pathlib.Path(".").absolute().parent / "wordle/core.py"
 w = Wordle()
 w.generate_from_file(filename, outfile="python_wordcloud.svg")
 export_wordcloud(w, outfile="python_wordcloud.png")
-
