@@ -44,9 +44,9 @@ modname = "wordle"
 pypi_name = "wordle"
 import_name = "wordle"
 __license__ = "GNU Lesser General Public License v3 or later (LGPLv3+)"
-short_desc = "Create a wordcloud for a Git repository."
-__author__ = author = "Dominic Davis-Foster"
-author_email = "dominic@davis-foster.co.uk"
+short_desc = 'Create a wordcloud for a Git repository.'
+__author__ = author = 'Dominic Davis-Foster'
+author_email = 'dominic@davis-foster.co.uk'
 github_username = "domdfcoding"
 web = github_url = "https://github.com/domdfcoding/wordle"
 repo_root = pathlib.Path(__file__).parent
