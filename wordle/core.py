@@ -281,15 +281,15 @@ class Wordle(WordCloud):
 		directory = pathlib.Path(directory).absolute()
 
 		if exclude_dirs:
-			exclude_dirs = [pathlib.Path(d).relative_to(directory) for d in exclude_dirs]
+			exclude_dirs_list = [pathlib.Path(d).relative_to(directory) for d in exclude_dirs]
 		else:
-			exclude_dirs = []
+			exclude_dirs_list = []
 
 		if exclude_words is None:
 			exclude_words = []
 
 		def is_excluded(path):
-			for dir_name in exclude_dirs:
+			for dir_name in exclude_dirs_list:
 				if dir_name in path.stem:
 					return True
 			return False
