@@ -2,7 +2,8 @@
 Create a wordcloud from a single C source file
 """
 
-from wordle.core import export_wordcloud, Wordle
+# this package
+from wordle.core import Wordle, export_wordcloud
 
 w = Wordle()
 w.generate_from_file("example.c", outfile="c_wordcloud.svg")

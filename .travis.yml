@@ -20,7 +20,7 @@ install:
 
 
 script:
-  - tox
+  - tox -vv
 
 
 stages:
@@ -40,7 +40,6 @@ jobs:
       arch: arm64
     - python: '3.9-dev'
       arch: arm64
-
 
   include:
     - stage: test

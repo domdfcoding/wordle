@@ -1,4 +1,4 @@
-dulwich
-numpy
-pygments
-wordcloud
+dulwich>=0.20.6
+numpy>=1.19.2
+pygments>=2.7.1
+wordcloud>=1.8.0
