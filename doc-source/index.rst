@@ -116,8 +116,13 @@ Can also create wordclouds from directories of source files or a single source f
 
 	API Reference<docs>
 	examples
+
+.. toctree::
+	:maxdepth: 3
+	:caption: Contributing
+
+	contributing
 	Source
-	Building
 
 .. start links
 
