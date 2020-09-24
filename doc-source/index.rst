@@ -27,90 +27,81 @@ Can also create wordclouds from directories of source files or a single source f
 	* - Other
 	  - |license| |language| |requires| |pre_commit|
 
-.. |docs| image:: https://img.shields.io/readthedocs/wordle/latest?logo=read-the-docs
-	:target: https://wordle.readthedocs.io/en/latest/?badge=latest
-	:alt: Documentation Status
+.. |docs| rtfd-shield::
+	:project: wordle
+	:alt: Documentation Build Status
 
-.. |docs_check| image:: https://github.com/domdfcoding/wordle/workflows/Docs%20Check/badge.svg
-	:target: https://github.com/domdfcoding/wordle/actions?query=workflow%3A%22Docs+Check%22
+.. |docs_check| actions-shield::
+	:workflow: Docs Check
 	:alt: Docs Check Status
 
-.. |travis| image:: https://img.shields.io/travis/com/domdfcoding/wordle/master?logo=travis
-	:target: https://travis-ci.com/domdfcoding/wordle
+.. |travis| travis-shield::
+	:travis-site: com
 	:alt: Travis Build Status
 
-.. |actions_windows| image:: https://github.com/domdfcoding/wordle/workflows/Windows%20Tests/badge.svg
-	:target: https://github.com/domdfcoding/wordle/actions?query=workflow%3A%22Windows+Tests%22
+.. |actions_windows| actions-shield::
+	:workflow: Windows Tests
 	:alt: Windows Tests Status
 
-.. |actions_macos| image:: https://github.com/domdfcoding/wordle/workflows/macOS%20Tests/badge.svg
-	:target: https://github.com/domdfcoding/wordle/actions?query=workflow%3A%22macOS+Tests%22
+.. |actions_macos| actions-shield::
+	:workflow: macOS Tests
 	:alt: macOS Tests Status
 
-.. |requires| image:: https://requires.io/github/domdfcoding/wordle/requirements.svg?branch=master
-	:target: https://requires.io/github/domdfcoding/wordle/requirements/?branch=master
+.. |requires| requires-io-shield::
 	:alt: Requirements Status
 
-.. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/wordle?logo=codefactor
-	:target: https://www.codefactor.io/repository/github/domdfcoding/wordle
+.. |codefactor| codefactor-shield::
 	:alt: CodeFactor Grade
 
-.. |pypi-version| image:: https://img.shields.io/pypi/v/wordle
-	:target: https://pypi.org/project/wordle/
+.. |pypi-version| pypi-shield::
+	:project: wordle
+	:version:
 	:alt: PyPI - Package Version
 
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/wordle?logo=python&logoColor=white
-	:target: https://pypi.org/project/wordle/
+.. |supported-versions| pypi-shield::
+	:project: wordle
+	:py-versions:
 	:alt: PyPI - Supported Python Versions
 
-.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/wordle
-	:target: https://pypi.org/project/wordle/
+.. |supported-implementations| pypi-shield::
+	:project: wordle
+	:implementations:
 	:alt: PyPI - Supported Implementations
 
-.. |wheel| image:: https://img.shields.io/pypi/wheel/wordle
-	:target: https://pypi.org/project/wordle/
+.. |wheel| pypi-shield::
+	:project: wordle
+	:wheel:
 	:alt: PyPI - Wheel
 
-.. |license| image:: https://img.shields.io/github/license/domdfcoding/wordle
-	:target: https://github.com/domdfcoding/wordle/blob/master/LICENSE
+.. |license| github-shield::
+	:license:
 	:alt: License
 
-.. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/wordle
+.. |language| github-shield::
+	:top-language:
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/wordle/v0.1.0
-	:target: https://github.com/domdfcoding/wordle/pulse
+.. |commits-since| github-shield::
+	:commits-since: v0.1.0
 	:alt: GitHub commits since tagged version
 
-.. |commits-latest| image:: https://img.shields.io/github/last-commit/domdfcoding/wordle
-	:target: https://github.com/domdfcoding/wordle/commit/master
+.. |commits-latest| github-shield::
+	:last-commit:
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2020
+.. |maintained| maintained-shield:: 2020
 	:alt: Maintenance
 
-.. |pre_commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
-	:target: https://github.com/pre-commit/pre-commit
+.. |pre_commit| pre-commit-shield::
 	:alt: pre-commit
 
 .. end shields
 
 .. start installation
 
-.. tabs::
-
-	.. tab:: from PyPI
-
-		.. prompt:: bash
-
-			python3 -m pip install wordle --user
-
-
-	.. tab:: from GitHub
-
-		.. prompt:: bash
-
-			python3 -m pip install git+https://github.com/domdfcoding/wordle@master --user
+.. installation:: wordle
+	:pypi:
+	:github:
 
 .. end installation
 

@@ -29,7 +29,7 @@ Can also create wordclouds from directories of source files or a single source f
 
 .. |docs| image:: https://img.shields.io/readthedocs/wordle/latest?logo=read-the-docs
 	:target: https://wordle.readthedocs.io/en/latest/?badge=latest
-	:alt: Documentation Status
+	:alt: Documentation Build Status
 
 .. |docs_check| image:: https://github.com/domdfcoding/wordle/workflows/Docs%20Check/badge.svg
 	:target: https://github.com/domdfcoding/wordle/actions?query=workflow%3A%22Docs+Check%22
