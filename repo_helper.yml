@@ -17,7 +17,7 @@ python_versions:
   - '3.6'
   - '3.7'
   - '3.8'
-  - '3.9-dev'
+#  - '3.9-dev'
 
 # travis secure password for PyPI
 travis_pypi_secure: "a6Jta48D4B/jvMegqTmD5T5a+sJ9yEAF+kpVFAyid8GmAgB7ekvzFbqZLqSNpuv0z4TgYE0vE0h3w/rh9REvli2dTdvj0cM3IcSpPLB86s2rBEkX7ntU5+yYnONfy+7sGS6AvjovMUubBVZk9IOtkyekOpk0MPaGwjAV3+xG6wbnK38OfTbGpTkmVFagtdgcYblqm/qeRCgWb9v1fxOi4AKvmBhD6OzscaF8NMRa4Qp0TD4gcrRYEVqlLYLQLyjqjzYC0A2yziKtPogWSanJLgSzWwEyOy4MNgX1MhNyQffyPR4Hf47HFxUGnUzOq42EN86xBQQ/lehKweNArq6WJa/D6u3tcqb0O7GVipqlfLZ2HJJ/pkOo0p5rpCgquumw5AzCkMbLAwCz774JZ25B1e6S16BGzu3oEIHMlOujEGrPN78yM2ecVYsR4298pXD0kIeCjrOLY7bIM77qw2QGrL4bk27JgdqGlVIbAs5k0MxyszVm/ztuEeZrPHoW6Xv5YVHJyZut6OMsNryjFG0mdVGcA8UM8fCP++ADjJGxG1pJ7N6CuS7pszShKLcP+Wc0z34xqAwdBtAI4rY0vEkj5NCo5O4gQYwtcMwUpEz01XJYIQwVO0JZIKgLcj9K2o/MaJXkIr+1Sb/ppWBV7yqJ0ehr9mzgqxOMUOlU5GpiJEQ="
