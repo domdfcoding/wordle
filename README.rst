@@ -19,7 +19,7 @@ Can also create wordclouds from directories of source files or a single source f
 	* - Docs
 	  - |docs| |docs_check|
 	* - Tests
-	  - |travis| |actions_windows| |actions_macos| |codefactor|
+	  - |travis| |actions_windows| |actions_macos| |codefactor| |pre_commit_ci|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
@@ -92,6 +92,10 @@ Can also create wordclouds from directories of source files or a single source f
 .. |pre_commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
 	:target: https://github.com/pre-commit/pre-commit
 	:alt: pre-commit
+
+.. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/domdfcoding/wordle/master.svg
+	:target: https://results.pre-commit.ci/latest/github/domdfcoding/wordle/master
+	:alt: pre-commit.ci status
 
 .. end shields
 
