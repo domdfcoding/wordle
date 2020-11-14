@@ -8,7 +8,7 @@ import pathlib
 # this package
 from wordle.core import Wordle, export_wordcloud
 
-filename = pathlib.Path(".").absolute().parent / "wordle/core.py"
+filename = pathlib.Path('.').absolute().parent / "wordle/core.py"
 
 w = Wordle()
 w.generate_from_file(filename, outfile="python_wordcloud.svg")

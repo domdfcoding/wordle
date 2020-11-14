@@ -2,7 +2,7 @@
 import keyword
 
 # git_path = '/home/domdf/GunShotMatch/GunShotMatch/GuiV2'
-git_path = 'C:/Users/dom13/GunShotMatch/GunShotMatch/GuiV2'
+git_path = "C:/Users/dom13/GunShotMatch/GunShotMatch/GuiV2"
 
 ignore_keywords = True
 
@@ -107,7 +107,7 @@ c_kwlist = [
 
 
 def blotOutNonNewlines(strIn):  # Return a string containing only the newline chars contained in strIn
-	return "" + ("\n" * strIn.count('\n'))
+	return '' + ('\n' * strIn.count('\n'))
 
 
 def replacer(match):
