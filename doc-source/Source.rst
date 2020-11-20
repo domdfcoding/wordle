@@ -3,7 +3,7 @@ Downloading source code
 =========================
 
 The ``wordle`` source code is available on GitHub,
-and can be accessed from the following URL: https://github.com/domdfcoding/wordle"
+and can be accessed from the following URL: https://github.com/domdfcoding/wordle
 
 If you have ``git`` installed, you can clone the repository with the following command:
 
