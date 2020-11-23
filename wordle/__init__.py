@@ -46,9 +46,9 @@ import pygments.lexers  # type: ignore
 import pygments.token  # type: ignore
 import pygments.util  # type: ignore
 from domdf_python_tools.typing import PathLike
-from dulwich import porcelain  # type: ignore
-from matplotlib.colors import Colormap
-from numpy.random.mtrand import RandomState
+from dulwich import porcelain
+from matplotlib.colors import Colormap  # type: ignore
+from numpy.random.mtrand import RandomState  # type: ignore
 from wordcloud import WordCloud  # type: ignore
 
 __author__: str = "Dominic Davis-Foster"
