@@ -1,148 +1,147 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="200">
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:black"></rect>
-<text transform="translate(81,155) rotate(-90)" font-size="72" style="fill:rgb(33, 144, 141)">if</text>
-<text transform="translate(57,65)" font-size="69" style="fill:rgb(72, 20, 103)">token</text>
-<text transform="translate(307,157)" font-size="68" style="fill:rgb(173, 220, 48)">to</text>
-<text transform="translate(184,163)" font-size="63" style="fill:rgb(52, 96, 141)">the</text>
-<text transform="translate(304,61)" font-size="57" style="fill:rgb(71, 16, 99)">of</text>
-<text transform="translate(123,198) rotate(-90)" font-size="55" style="fill:rgb(72, 28, 110)">None</text>
-<text transform="translate(168,177) rotate(-90)" font-size="54" style="fill:rgb(124, 210, 80)">str</text>
-<text transform="translate(273,100)" font-size="50" style="fill:rgb(71, 47, 125)">word</text>
-<text transform="translate(24,36)" font-size="49" style="fill:rgb(58, 84, 140)">a</text>
-<text transform="translate(232,186)" font-size="29" style="fill:rgb(51, 98, 141)">Optional</text>
-<text transform="translate(147,89)" font-size="29" style="fill:rgb(37, 133, 142)">Default</text>
-<text transform="translate(375,49)" font-size="29" style="fill:rgb(92, 200, 99)">1</text>
-<text transform="translate(8,63)" font-size="28" style="fill:rgb(200, 224, 32)">for</text>
-<text transform="translate(137,189)" font-size="22" style="fill:rgb(101, 203, 94)">pathlib</text>
-<text transform="translate(154,21)" font-size="22" style="fill:rgb(189, 223, 38)">continue</text>
-<text transform="translate(177,103)" font-size="20" style="fill:rgb(31, 162, 135)">pygments</text>
-<text transform="translate(40,161)" font-size="20" style="fill:rgb(33, 142, 141)">is</text>
-<text transform="translate(288,17)" font-size="20" style="fill:rgb(69, 5, 89)">Path</text>
-<text transform="translate(16,184)" font-size="19" style="fill:rgb(221, 227, 24)">import</text>
-<text transform="translate(3,122)" font-size="18" style="fill:rgb(31, 153, 138)">self</text>
-<text transform="translate(236,119)" font-size="17" style="fill:rgb(53, 183, 121)">The</text>
-<text transform="translate(261,61)" font-size="17" style="fill:rgb(30, 157, 137)">and</text>
-<text transform="translate(50,11)" font-size="11" style="fill:rgb(37, 171, 130)">max_font_size</text>
-<text transform="translate(53,79)" font-size="11" style="fill:rgb(216, 226, 25)">0</text>
-<text transform="translate(342,9)" font-size="11" style="fill:rgb(57, 85, 140)">Union</text>
-<text transform="translate(263,8)" font-size="10" style="fill:rgb(115, 208, 86)">os</text>
-<text transform="translate(262,45)" font-size="10" style="fill:rgb(94, 201, 98)">from</text>
-<text transform="translate(55,107)" font-size="10" style="fill:rgb(72, 40, 120)">will</text>
-<text transform="translate(265,21)" font-size="10" style="fill:rgb(34, 141, 141)">int</text>
-<text transform="translate(361,195)" font-size="10" style="fill:rgb(210, 226, 27)">file</text>
-<text transform="translate(261,193)" font-size="10" style="fill:rgb(34, 141, 141)">word_counts</text>
-<text transform="translate(153,144)" font-size="10" style="fill:rgb(31, 161, 136)">total</text>
-<text transform="translate(392,161) rotate(-90)" font-size="10" style="fill:rgb(149, 216, 64)">be</text>
-<text transform="translate(266,114)" font-size="10" style="fill:rgb(31, 152, 139)">PathLike</text>
-<text transform="translate(13,153)" font-size="9" style="fill:rgb(122, 209, 81)">mask</text>
-<text transform="translate(68,77)" font-size="9" style="fill:rgb(34, 141, 141)">def</text>
-<text transform="translate(305,132)" font-size="8" style="fill:rgb(71, 47, 125)">re</text>
-<text transform="translate(381,55)" font-size="8" style="fill:rgb(64, 69, 136)">or</text>
-<text transform="translate(100,24)" font-size="8" style="fill:rgb(31, 160, 136)">If</text>
-<text transform="translate(59,84)" font-size="8" style="fill:rgb(200, 224, 32)">return</text>
-<text transform="translate(350,116)" font-size="7" style="fill:rgb(39, 127, 142)">Counter</text>
-<text transform="translate(50,192)" font-size="7" style="fill:rgb(47, 107, 142)">Sequence</text>
-<text transform="translate(153,195)" font-size="7" style="fill:rgb(71, 44, 122)">height</text>
-<text transform="translate(110,51)" font-size="7" style="fill:rgb(44, 115, 142)">not</text>
-<text transform="translate(392,144) rotate(-90)" font-size="7" style="fill:rgb(70, 8, 92)">word_cloud</text>
-<text transform="translate(293,161)" font-size="7" style="fill:rgb(223, 227, 24)">wordle</text>
-<text transform="translate(17,192)" font-size="7" style="fill:rgb(72, 23, 105)">match</text>
-<text transform="translate(197,115)" font-size="7" style="fill:rgb(42, 176, 127)">String</text>
-<text transform="translate(179,158)" font-size="6" style="fill:rgb(53, 94, 141)">are</text>
-<text transform="translate(270,121)" font-size="6" style="fill:rgb(144, 215, 67)">this</text>
-<text transform="translate(263,35)" font-size="6" style="fill:rgb(96, 202, 96)">width</text>
-<text transform="translate(335,197) rotate(-90)" font-size="6" style="fill:rgb(44, 114, 142)">optional
-
-	:param</text>
-<text transform="translate(378,186)" font-size="6" style="fill:rgb(39, 127, 142)">scale</text>
-<text transform="translate(291,24)" font-size="6" style="fill:rgb(63, 72, 137)">words</text>
-<text transform="translate(276,70)" font-size="6" style="fill:rgb(53, 94, 141)">An</text>
-<text transform="translate(365,14)" font-size="6" style="fill:rgb(155, 217, 60)">optional</text>
-<text transform="translate(108,117)" font-size="6" style="fill:rgb(66, 64, 134)">list</text>
-<text transform="translate(364,168)" font-size="6" style="fill:rgb(72, 29, 111)">exclude
+<text transform="translate(204,154)" font-size="119" style="fill:rgb(66, 64, 134)">to</text>
+<text transform="translate(7,174)" font-size="111" style="fill:rgb(30, 157, 137)">the</text>
+<text transform="translate(93,93)" font-size="97" style="fill:rgb(51, 99, 141)">if</text>
+<text transform="translate(206,51)" font-size="64" style="fill:rgb(218, 227, 25)">token</text>
+<text transform="translate(384,196) rotate(-90)" font-size="60" style="fill:rgb(35, 136, 142)">None</text>
+<text transform="translate(2,69)" font-size="55" style="fill:rgb(49, 102, 142)">str</text>
+<text transform="translate(283,86) rotate(-90)" font-size="55" style="fill:rgb(31, 148, 140)">a</text>
+<text transform="translate(199,190)" font-size="46" style="fill:rgb(192, 223, 37)">of</text>
+<text transform="translate(256,189)" font-size="44" style="fill:rgb(46, 110, 142)">is</text>
+<text transform="translate(24,25)" font-size="31" style="fill:rgb(31, 154, 138)">word</text>
+<text transform="translate(151,58) rotate(-90)" font-size="30" style="fill:rgb(46, 179, 124)">for</text>
+<text transform="translate(5,91)" font-size="28" style="fill:rgb(32, 146, 140)">self</text>
+<text transform="translate(69,189)" font-size="20" style="fill:rgb(96, 202, 96)">Optional</text>
+<text transform="translate(53,190)" font-size="20" style="fill:rgb(80, 196, 106)">1</text>
+<text transform="translate(19,193) rotate(-90)" font-size="19" style="fill:rgb(103, 204, 92)">import</text>
+<text transform="translate(108,107)" font-size="18" style="fill:rgb(197, 224, 33)">continue</text>
+<text transform="translate(306,69)" font-size="17" style="fill:rgb(35, 136, 142)">from</text>
+<text transform="translate(184,64)" font-size="14" style="fill:rgb(34, 140, 141)">pygments</text>
+<text transform="translate(188,13)" font-size="14" style="fill:rgb(57, 85, 140)">The</text>
+<text transform="translate(239,123)" font-size="14" style="fill:rgb(39, 128, 142)">def</text>
+<text transform="translate(304,175)" font-size="13" style="fill:rgb(39, 126, 142)">and</text>
+<text transform="translate(300,10)" font-size="13" style="fill:rgb(37, 171, 130)">return</text>
+<text transform="translate(75,173) rotate(-90)" font-size="12" style="fill:rgb(33, 144, 141)">max_font_size</text>
+<text transform="translate(293,84) rotate(-90)" font-size="12" style="fill:rgb(48, 105, 142)">int</text>
+<text transform="translate(342,149)" font-size="12" style="fill:rgb(46, 109, 142)">0</text>
+<text transform="translate(166,157)" font-size="12" style="fill:rgb(71, 42, 122)">PathLike</text>
+<text transform="translate(308,193)" font-size="12" style="fill:rgb(46, 179, 124)">file</text>
+<text transform="translate(129,73)" font-size="11" style="fill:rgb(38, 129, 142)">will</text>
+<text transform="translate(263,114)" font-size="11" style="fill:rgb(86, 198, 103)">be</text>
+<text transform="translate(191,76)" font-size="11" style="fill:rgb(72, 27, 109)">total</text>
+<text transform="translate(64,32)" font-size="10" style="fill:rgb(60, 80, 139)">pathlib</text>
+<text transform="translate(219,143) rotate(-90)" font-size="10" style="fill:rgb(110, 206, 88)">Counter</text>
+<text transform="translate(102,55)" font-size="10" style="fill:rgb(63, 72, 137)">If</text>
+<text transform="translate(393,130) rotate(-90)" font-size="10" style="fill:rgb(231, 228, 25)">word_counts</text>
+<text transform="translate(172,193)" font-size="9" style="fill:rgb(202, 225, 31)">Union</text>
+<text transform="translate(48,196) rotate(-90)" font-size="9" style="fill:rgb(61, 78, 138)">this</text>
+<text transform="translate(192,87)" font-size="9" style="fill:rgb(244, 230, 30)">mask</text>
+<text transform="translate(147,85)" font-size="9" style="fill:rgb(208, 225, 28)">Path</text>
+<text transform="translate(364,11)" font-size="9" style="fill:rgb(32, 163, 134)">wordle</text>
+<text transform="translate(3,13)" font-size="8" style="fill:rgb(229, 228, 25)">re</text>
+<text transform="translate(316,77)" font-size="8" style="fill:rgb(56, 89, 140)">typing</text>
+<text transform="translate(40,130)" font-size="8" style="fill:rgb(66, 64, 134)">or</text>
+<text transform="translate(53,131)" font-size="8" style="fill:rgb(184, 222, 41)">as</text>
+<text transform="translate(47,146)" font-size="8" style="fill:rgb(34, 139, 141)">not</text>
+<text transform="translate(16,32)" font-size="8" style="fill:rgb(40, 124, 142)">super</text>
+<text transform="translate(82,73)" font-size="7" style="fill:rgb(192, 223, 37)">Sequence</text>
+<text transform="translate(128,193)" font-size="7" style="fill:rgb(39, 127, 142)">numpy</text>
+<text transform="translate(323,86)" font-size="7" style="fill:rgb(31, 159, 136)">Wordle</text>
+<text transform="translate(105,143)" font-size="7" style="fill:rgb(72, 31, 112)">are</text>
+<text transform="translate(145,7)" font-size="7" style="fill:rgb(61, 188, 116)">height</text>
+<text transform="translate(234,10)" font-size="7" style="fill:rgb(112, 207, 87)">Whether</text>
+<text transform="translate(155,31)" font-size="7" style="fill:rgb(221, 227, 24)">bool</text>
+<text transform="translate(257,195)" font-size="7" style="fill:rgb(71, 19, 101)">word_cloud</text>
+<text transform="translate(139,60)" font-size="7" style="fill:rgb(65, 68, 135)">match</text>
+<text transform="translate(244,138)" font-size="7" style="fill:rgb(56, 88, 140)">String</text>
+<text transform="translate(297,114)" font-size="6" style="fill:rgb(94, 201, 98)">source</text>
+<text transform="translate(140,157) rotate(-90)" font-size="6" style="fill:rgb(70, 8, 92)">wordcloud</text>
+<text transform="translate(293,160)" font-size="6" style="fill:rgb(160, 218, 57)">get_tokens</text>
+<text transform="translate(20,188)" font-size="6" style="fill:rgb(70, 8, 92)">font</text>
+<text transform="translate(179,182)" font-size="6" style="fill:rgb(31, 154, 138)">width</text>
+<text transform="translate(207,144) rotate(-90)" font-size="6" style="fill:rgb(173, 220, 48)">:py:obj:`None`</text>
+<text transform="translate(213,50) rotate(-90)" font-size="6" style="fill:rgb(69, 55, 129)">scale</text>
+<text transform="translate(267,96)" font-size="6" style="fill:rgb(99, 203, 95)">in</text>
+<text transform="translate(300,130)" font-size="6" style="fill:rgb(65, 66, 135)">color</text>
+<text transform="translate(202,196)" font-size="6" style="fill:rgb(42, 120, 142)">color_func</text>
+<text transform="translate(4,101)" font-size="6" style="fill:rgb(62, 74, 137)">words</text>
+<text transform="translate(244,179)" font-size="6" style="fill:rgb(40, 174, 128)">False</text>
+<text transform="translate(26,163) rotate(-90)" font-size="6" style="fill:rgb(36, 134, 142)">An</text>
+<text transform="translate(98,8)" font-size="6" style="fill:rgb(72, 193, 110)">optional</text>
+<text transform="translate(250,128)" font-size="6" style="fill:rgb(33, 145, 140)">list</text>
+<text transform="translate(393,222) rotate(-90)" font-size="6" style="fill:rgb(244, 230, 30)">exclude
 		:param</text>
-<text transform="translate(46,67)" font-size="5" style="fill:rgb(50, 101, 142)">Wordle</text>
-<text transform="translate(357,56)" font-size="5" style="fill:rgb(52, 97, 141)">source</text>
-<text transform="translate(150,93)" font-size="5" style="fill:rgb(72, 38, 119)">path</text>
-<text transform="translate(285,104)" font-size="5" style="fill:rgb(35, 136, 142)">that</text>
-<text transform="translate(45,124)" font-size="5" style="fill:rgb(60, 79, 138)">you</text>
-<text transform="translate(196,193)" font-size="5" style="fill:rgb(124, 210, 80)">prefer_horizontal</text>
-<text transform="translate(337,133)" font-size="5" style="fill:rgb(68, 58, 131)">try</text>
-<text transform="translate(11,136)" font-size="5" style="fill:rgb(39, 126, 142)">as</text>
-<text transform="translate(4,16)" font-size="5" style="fill:rgb(105, 205, 91)">float
-
-	:param</text>
-<text transform="translate(125,111)" font-size="5" style="fill:rgb(157, 217, 59)">draw</text>
-<text transform="translate(41,168)" font-size="5" style="fill:rgb(56, 185, 119)">words.</text>
-<text transform="translate(284,69)" font-size="5" style="fill:rgb(134, 213, 73)">contour_width</text>
-<text transform="translate(4,102)" font-size="5" style="fill:rgb(33, 144, 141)">``None``</text>
-<text transform="translate(153,97)" font-size="5" style="fill:rgb(34, 139, 141)">instead</text>
-<text transform="translate(4,79)" font-size="5" style="fill:rgb(78, 195, 107)">size</text>
-<text transform="translate(137,42)" font-size="5" style="fill:rgb(69, 4, 87)">in</text>
-<text transform="translate(87,170) rotate(-90)" font-size="5" style="fill:rgb(144, 215, 67)">int
-
-	:param</text>
-<text transform="translate(331,194)" font-size="5" style="fill:rgb(59, 81, 139)">font_step</text>
-<text transform="translate(35,41)" font-size="5" style="fill:rgb(34, 168, 132)">max_words</text>
-<text transform="translate(11,174) rotate(-90)" font-size="5" style="fill:rgb(47, 180, 124)">color</text>
-<text transform="translate(291,52)" font-size="5" style="fill:rgb(117, 208, 84)">mode</text>
-<text transform="translate(307,105)" font-size="5" style="fill:rgb(46, 110, 142)">relative_scaling</text>
-<text transform="translate(263,25)" font-size="5" style="fill:rgb(46, 179, 124)">with</text>
-<text transform="translate(80,100)" font-size="5" style="fill:rgb(70, 192, 111)">collocations</text>
-<text transform="translate(223,69) rotate(-90)" font-size="5" style="fill:rgb(124, 210, 80)">code</text>
-<text transform="translate(177,118)" font-size="5" style="fill:rgb(57, 86, 140)">float</text>
-<text transform="translate(21,88) rotate(-90)" font-size="5" style="fill:rgb(70, 7, 90)">outfile</text>
-<text transform="translate(54,111)" font-size="5" style="fill:rgb(34, 168, 132)">get_tokens</text>
-<text transform="translate(301,29)" font-size="5" style="fill:rgb(90, 200, 100)">del</text>
-<text transform="translate(355,68)" font-size="5" style="fill:rgb(142, 214, 69)">all_words</text>
-<text transform="translate(83,41)" font-size="4" style="fill:rgb(34, 140, 141)">Callable</text>
-<text transform="translate(168,7)" font-size="4" style="fill:rgb(101, 203, 94)">wordcloud</text>
-<text transform="translate(360,108)" font-size="4" style="fill:rgb(31, 160, 136)">WordCloud</text>
-<text transform="translate(61,167)" font-size="4" style="fill:rgb(32, 147, 140)">font_path</text>
-<text transform="translate(343,15)" font-size="4" style="fill:rgb(178, 221, 45)">font</text>
-<text transform="translate(85,127)" font-size="4" style="fill:rgb(67, 62, 133)">on</text>
-<text transform="translate(123,171)" font-size="4" style="fill:rgb(70, 50, 126)">have</text>
-<text transform="translate(8,144)" font-size="4" style="fill:rgb(43, 116, 142)">int,</text>
-<text transform="translate(16,7) rotate(-90)" font-size="4" style="fill:rgb(71, 47, 125)">it</text>
-<text transform="translate(370,25)" font-size="4" style="fill:rgb(31, 150, 139)">contour_color</text>
-<text transform="translate(205,138)" font-size="4" style="fill:rgb(68, 59, 132)">str
-
-	:param</text>
-<text transform="translate(197,55)" font-size="4" style="fill:rgb(32, 164, 134)">min_font_size</text>
-<text transform="translate(256,125)" font-size="4" style="fill:rgb(115, 208, 86)">background_color</text>
-<text transform="translate(293,135)" font-size="4" style="fill:rgb(46, 110, 142)">set</text>
-<text transform="translate(327,118)" font-size="4" style="fill:rgb(223, 227, 24)">color_func</text>
-<text transform="translate(295,145)" font-size="4" style="fill:rgb(96, 202, 96)">regexp</text>
-<text transform="translate(344,88)" font-size="4" style="fill:rgb(71, 17, 100)">Whether</text>
-<text transform="translate(288,153)" font-size="4" style="fill:rgb(72, 33, 115)">include_numbers</text>
-<text transform="translate(313,23)" font-size="4" style="fill:rgb(72, 33, 115)">min_word_length</text>
-<text transform="translate(364,50)" font-size="4" style="fill:rgb(41, 123, 142)">bool</text>
-<text transform="translate(29,68)" font-size="4" style="fill:rgb(221, 227, 24)">False</text>
-<text transform="translate(18,5)" font-size="4" style="fill:rgb(36, 170, 131)">exclude_words</text>
-<text transform="translate(78,45)" font-size="4" style="fill:rgb(64, 189, 114)">"""
+<text transform="translate(220,143)" font-size="5" style="fill:rgb(72, 28, 110)">os</text>
+<text transform="translate(86,193)" font-size="5" style="fill:rgb(71, 19, 101)">Callable</text>
+<text transform="translate(277,178) rotate(-90)" font-size="5" style="fill:rgb(149, 216, 64)">export_wordcloud</text>
+<text transform="translate(2,24)" font-size="5" style="fill:rgb(69, 4, 87)">path</text>
+<text transform="translate(2,30)" font-size="5" style="fill:rgb(234, 229, 26)">that</text>
+<text transform="translate(50,101)" font-size="5" style="fill:rgb(176, 221, 47)">you</text>
+<text transform="translate(283,55) rotate(-90)" font-size="5" style="fill:rgb(71, 47, 125)">prefer_horizontal</text>
+<text transform="translate(256,159)" font-size="5" style="fill:rgb(34, 139, 141)">try</text>
+<text transform="translate(93,151)" font-size="5" style="fill:rgb(33, 144, 141)">draw</text>
+<text transform="translate(76,82)" font-size="5" style="fill:rgb(59, 81, 139)">contour_width</text>
+<text transform="translate(298,81) rotate(-90)" font-size="5" style="fill:rgb(72, 193, 110)">instead</text>
+<text transform="translate(270,127) rotate(-90)" font-size="5" style="fill:rgb(147, 215, 65)">size</text>
+<text transform="translate(123,111)" font-size="5" style="fill:rgb(41, 123, 142)">min_font_size</text>
+<text transform="translate(40,154)" font-size="5" style="fill:rgb(56, 88, 140)">max_words</text>
+<text transform="translate(333,153)" font-size="5" style="fill:rgb(78, 195, 107)">image</text>
+<text transform="translate(25,49)" font-size="5" style="fill:rgb(63, 71, 136)">mode</text>
+<text transform="translate(346,137) rotate(-90)" font-size="5" style="fill:rgb(58, 84, 140)">relative_scaling</text>
+<text transform="translate(170,9)" font-size="5" style="fill:rgb(221, 227, 24)">with</text>
+<text transform="translate(359,47) rotate(-90)" font-size="5" style="fill:rgb(36, 170, 131)">collocations</text>
+<text transform="translate(36,73) rotate(-90)" font-size="5" style="fill:rgb(213, 226, 26)">include</text>
+<text transform="translate(39,109)" font-size="5" style="fill:rgb(139, 214, 70)">code</text>
+<text transform="translate(97,170)" font-size="5" style="fill:rgb(39, 173, 129)">float</text>
+<text transform="translate(41,136)" font-size="5" style="fill:rgb(241, 229, 29)">outfile</text>
+<text transform="translate(262,11)" font-size="5" style="fill:rgb(68, 191, 112)">save</text>
+<text transform="translate(107,154)" font-size="5" style="fill:rgb(213, 226, 26)">Use</text>
+<text transform="translate(306,121)" font-size="5" style="fill:rgb(45, 113, 142)">del</text>
+<text transform="translate(311,180)" font-size="5" style="fill:rgb(53, 183, 121)">all_words</text>
+<text transform="translate(98,16)" font-size="4" style="fill:rgb(38, 129, 142)">directories</text>
+<text transform="translate(361,105)" font-size="4" style="fill:rgb(71, 47, 125)">Colormap</text>
+<text transform="translate(66,5)" font-size="4" style="fill:rgb(122, 209, 81)">RandomState</text>
+<text transform="translate(365,184)" font-size="4" style="fill:rgb(43, 117, 142)">WordCloud</text>
+<text transform="translate(381,54) rotate(-90)" font-size="4" style="fill:rgb(94, 201, 98)">font_path</text>
+<text transform="translate(20,127)" font-size="4" style="fill:rgb(55, 90, 140)">on</text>
+<text transform="translate(303,86) rotate(-90)" font-size="4" style="fill:rgb(67, 61, 132)">have</text>
+<text transform="translate(321,128)" font-size="4" style="fill:rgb(117, 208, 84)">it</text>
+<text transform="translate(316,57)" font-size="4" style="fill:rgb(61, 188, 116)">:py:obj:`None`,</text>
+<text transform="translate(240,85)" font-size="4" style="fill:rgb(63, 71, 136)">contour_color</text>
+<text transform="translate(91,66)" font-size="4" style="fill:rgb(246, 230, 32)">when</text>
+<text transform="translate(50,195)" font-size="4" style="fill:rgb(35, 136, 142)">font_step</text>
+<text transform="translate(96,37)" font-size="4" style="fill:rgb(47, 108, 142)">background_color</text>
+<text transform="translate(387,57)" font-size="4" style="fill:rgb(49, 104, 142)">set</text>
+<text transform="translate(101,59)" font-size="4" style="fill:rgb(41, 175, 127)">Default</text>
+<text transform="translate(60,49)" font-size="4" style="fill:rgb(61, 77, 138)">regexp</text>
+<text transform="translate(315,197)" font-size="4" style="fill:rgb(36, 134, 142)">include_numbers</text>
+<text transform="translate(199,161)" font-size="4" style="fill:rgb(82, 197, 105)">min_word_length</text>
+<text transform="translate(198,52)" font-size="4" style="fill:rgb(63, 72, 137)">True</text>
+<text transform="translate(357,144)" font-size="4" style="fill:rgb(71, 19, 101)">filename</text>
+<text transform="translate(156,15)" font-size="4" style="fill:rgb(241, 229, 29)">exclude_words</text>
+<text transform="translate(226,29)" font-size="4" style="fill:rgb(200, 224, 32)">"""
 		Create</text>
-<text transform="translate(16,158)" font-size="4" style="fill:rgb(72, 24, 106)">process
+<text transform="translate(5,180) rotate(-90)" font-size="4" style="fill:rgb(54, 92, 141)">file.
+
 		:param</text>
-<text transform="translate(364,142)" font-size="4" style="fill:rgb(55, 91, 141)">save</text>
-<text transform="translate(15,24)" font-size="4" style="fill:rgb(72, 37, 118)">as.</text>
-<text transform="translate(5,156) rotate(-90)" font-size="4" style="fill:rgb(71, 47, 125)">Supported</text>
-<text transform="translate(213,26)" font-size="4" style="fill:rgb(32, 163, 134)">formats</text>
-<text transform="translate(365,41)" font-size="4" style="fill:rgb(37, 133, 142)">``PNG``,</text>
-<text transform="translate(347,162)" font-size="4" style="fill:rgb(162, 218, 55)">``JPEG``</text>
-<text transform="translate(127,68)" font-size="4" style="fill:rgb(35, 138, 141)">SVG.
-		If</text>
-<text transform="translate(145,111)" font-size="4" style="fill:rgb(72, 29, 111)">saved
+<text transform="translate(55,53)" font-size="4" style="fill:rgb(134, 213, 73)">process
 		:param</text>
-<text transform="translate(56,45)" font-size="4" style="fill:rgb(194, 223, 35)">Use</text>
-<text transform="translate(259,198)" font-size="4" style="fill:rgb(52, 97, 141)">font-size</text>
-<text transform="translate(354,222) rotate(-90)" font-size="4" style="fill:rgb(69, 4, 87)">self.max_font_size
-		:type</text>
-<text transform="translate(63,149)" font-size="4" style="fill:rgb(162, 218, 55)">int
-		"""</text>
-<text transform="translate(220,5)" font-size="4" style="fill:rgb(36, 170, 131)">export_wordcloud</text>
-<text transform="translate(111,133)" font-size="4" style="fill:rgb(32, 147, 140)">else</text>
-<text transform="translate(60,117)" font-size="4" style="fill:rgb(71, 17, 100)">tmpdir</text>
-<text transform="translate(217,161)" font-size="4" style="fill:rgb(47, 108, 142)">lex</text>
-<text transform="translate(291,119)" font-size="4" style="fill:rgb(194, 223, 35)">char</text>
+<text transform="translate(113,165)" font-size="4" style="fill:rgb(33, 165, 133)">as.</text>
+<text transform="translate(296,14)" font-size="4" style="fill:rgb(35, 137, 142)">Supported</text>
+<text transform="translate(243,187)" font-size="4" style="fill:rgb(46, 179, 124)">formats</text>
+<text transform="translate(132,116)" font-size="4" style="fill:rgb(57, 85, 140)">``PNG``,</text>
+<text transform="translate(155,68)" font-size="4" style="fill:rgb(168, 219, 52)">``JPEG``</text>
+<text transform="translate(244,86) rotate(-90)" font-size="4" style="fill:rgb(41, 123, 142)">SVG.
+			If</text>
+<text transform="translate(147,89)" font-size="4" style="fill:rgb(31, 158, 137)">font-size</text>
+<text transform="translate(10,5)" font-size="4" style="fill:rgb(71, 45, 123)">exclude_dirs_list</text>
+<text transform="translate(14,111)" font-size="4" style="fill:rgb(112, 207, 87)">else</text>
+<text transform="translate(163,135)" font-size="4" style="fill:rgb(71, 45, 123)">tmpdir</text>
+<text transform="translate(265,101)" font-size="4" style="fill:rgb(142, 214, 69)">new</text>
+<text transform="translate(19,176)" font-size="4" style="fill:rgb(33, 165, 133)">to_file</text>
+<text transform="translate(158,19)" font-size="4" style="fill:rgb(55, 91, 141)">to_svg</text>
+<text transform="translate(310,36)" font-size="4" style="fill:rgb(101, 203, 94)">SVG</text>
+<text transform="translate(52,5)" font-size="4" style="fill:rgb(44, 113, 142)">char</text>
 </svg>
