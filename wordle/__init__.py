@@ -30,7 +30,6 @@ Create wordclouds from git repositories, directories and source files.
 #  MIT Licensed
 #
 
-
 # stdlib
 import os
 import pathlib
@@ -46,18 +45,17 @@ import numpy  # type: ignore
 import pygments.lexers  # type: ignore
 import pygments.token  # type: ignore
 import pygments.util  # type: ignore
+from domdf_python_tools.typing import PathLike
 from dulwich import porcelain  # type: ignore
 from matplotlib.colors import Colormap
 from numpy.random.mtrand import RandomState
 from wordcloud import WordCloud  # type: ignore
-from domdf_python_tools.typing import PathLike
 
 __author__: str = "Dominic Davis-Foster"
 __copyright__: str = "2020 Dominic Davis-Foster"
 __license__: str = "MIT License"
 __version__: str = "0.1.0"
 __email__: str = "dominic@davis-foster.co.uk"
-
 
 __all__ = ["Wordle", "export_wordcloud", "get_tokens"]
 
