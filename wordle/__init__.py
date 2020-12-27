@@ -107,23 +107,22 @@ class Wordle(WordCloud):
 		the size.  If you want to consider the word frequencies and not only
 		their rank, relative_scaling around .5 often looks good.
 		If 'auto' it will be set to 0.5 unless repeat is true, in which
-		case it will be set to 0. Default ``"auto"``
+		case it will be set to 0.
 
-	:param color_func: Callable with parameters word, font_size, position, orientation,
-		font_path, random_state that returns a PIL color for each word.
+	:param color_func: Callable with parameters ``word``, ``font_size``, ``position``, ``orientation``,
+		``font_path``, ``random_state`` which returns a PIL color for each word.
 		Overwrites "colormap".
-		See colormap for specifying a matplotlib colormap instead.
-		To create a word cloud with a single color, use
-		``color_func=lambda *args, **kwargs: "white"``.
-		The single color can also be specified using RGB code. For example
-		``color_func=lambda *args, **kwargs: (255,0,0)`` sets color to red.
+		See ``colormap`` for specifying a matplotlib colormap instead.
+		To create a word cloud with a single color, use ``color_func=lambda *args, **kwargs: "white"``.
+		The single color can also be specified using RGB code.
+		For example ``color_func=lambda *args, **kwargs: (255,0,0)`` sets the color to red.
 
 	:param regexp: Regular expression to split the input text into tokens in process_text.
 		If None is specified, ``r"\w[\w']+"`` is used. Ignored if using
 		generate_from_frequencies.
 
 	:param collocations: Whether to include collocations (bigrams) of two words. Ignored if using
-		generate_from_frequencies. Default ``True``
+		generate_from_frequencies.
 
 	:param colormap: Matplotlib colormap to randomly draw colors from for each word.
 		Ignored if "color_func" is specified. Default "viridis".
@@ -144,7 +143,13 @@ class Wordle(WordCloud):
 
 	"""
 
-	def to_html(self):
+	color_func: Callable
+	"""
+	Callable with parameters ``word``, ``font_size``, ``position``, ``orientation``,
+	``font_path``, ``random_state`` which returns a PIL color for each word.
+	"""
+
+	def to_html(self):  # noqa: D102
 		raise NotImplementedError
 
 	def __init__(
@@ -349,9 +354,8 @@ class Wordle(WordCloud):
 		:param random_state: If not :py:obj:`None`, a fixed random state is used.
 			If an :class:`int` is given, this is used as seed for a :class:`random.Random` state.
 
-		:param color_func: function or None, default=None
-			Function to generate new color from word count, font size, position
-			and orientation.  If :py:obj:`None`, :attr:`~Wordle.color_func` is used.
+		:param color_func:  Function to generate new color from word count, font size, position and orientation.
+			If :py:obj:`None`, :attr:`~Wordle.color_func` is used.
 
 		:param colormap: Use this colormap to generate new colors.
 			Ignored if ``color_func`` is specified. If :py:obj:`None`,
@@ -382,8 +386,7 @@ class Wordle(WordCloud):
 
 	def to_image(self):
 		"""
-
-		:return:
+		Returns the wordcloud as an image.
 		"""
 
 		return super().to_image()
