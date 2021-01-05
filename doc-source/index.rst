@@ -99,7 +99,7 @@ Can also create wordclouds from directories of source files or a single source f
 	:last-commit:
 	:alt: GitHub last commit
 
-.. |maintained| maintained-shield:: 2020
+.. |maintained| maintained-shield:: 2021
 	:alt: Maintenance
 
 .. |pypi-downloads| pypi-shield::

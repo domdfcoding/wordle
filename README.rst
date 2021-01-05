@@ -96,7 +96,7 @@ Can also create wordclouds from directories of source files or a single source f
 	:target: https://github.com/domdfcoding/wordle/commit/master
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2020
+.. |maintained| image:: https://img.shields.io/maintenance/yes/2021
 	:alt: Maintenance
 
 .. |pypi-downloads| image:: https://img.shields.io/pypi/dm/wordle
