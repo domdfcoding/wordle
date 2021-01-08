@@ -46,6 +46,7 @@ from wordcloud import WordCloud  # type: ignore
 
 # this package
 from wordle.frequency import frequency_from_directory, frequency_from_file, get_tokens
+from wordle.utils import clone_into_tmpdir
 
 __author__: str = "Dominic Davis-Foster"
 __copyright__: str = "2020 Dominic Davis-Foster"
@@ -54,9 +55,6 @@ __version__: str = "0.1.0"
 __email__: str = "dominic@davis-foster.co.uk"
 
 __all__ = ["Wordle", "export_wordcloud"]
-
-# this package
-from wordle.utils import clone_into_tmpdir
 
 
 class Wordle(WordCloud):
