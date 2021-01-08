@@ -2,6 +2,7 @@
     "schedule": "weekly",
     "ignoredFiles": [
         "**/*.svg",
-        "examples/*"
+        "examples/*",
+        "tests/test_wordle_/*.png"
     ]
 }
