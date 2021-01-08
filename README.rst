@@ -19,7 +19,7 @@ Can also create wordclouds from directories of source files or a single source f
 	* - Docs
 	  - |docs| |docs_check|
 	* - Tests
-	  - |actions_linux| |actions_windows| |actions_macos|
+	  - |actions_linux| |actions_windows| |actions_macos| |coveralls|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
@@ -60,6 +60,10 @@ Can also create wordclouds from directories of source files or a single source f
 .. |requires| image:: https://requires.io/github/domdfcoding/wordle/requirements.svg?branch=master
 	:target: https://requires.io/github/domdfcoding/wordle/requirements/?branch=master
 	:alt: Requirements Status
+
+.. |coveralls| image:: https://img.shields.io/coveralls/github/domdfcoding/wordle/master?logo=coveralls
+	:target: https://coveralls.io/github/domdfcoding/wordle?branch=master
+	:alt: Coverage
 
 .. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/wordle?logo=codefactor
 	:target: https://www.codefactor.io/repository/github/domdfcoding/wordle

@@ -33,23 +33,19 @@ Create wordclouds from git repositories, directories and source files.
 # stdlib
 import os
 import pathlib
-import re
 import tempfile
 import typing
-from collections import Counter
-from string import punctuation
 from typing import Callable, Optional, Sequence, Union
 
 # 3rd party
 import numpy  # type: ignore
-import pygments.lexers  # type: ignore
-import pygments.token  # type: ignore
-import pygments.util  # type: ignore
 from domdf_python_tools.typing import PathLike
-from dulwich import porcelain
 from matplotlib.colors import Colormap  # type: ignore
 from numpy.random.mtrand import RandomState  # type: ignore
 from wordcloud import WordCloud  # type: ignore
+
+# this package
+from wordle.frequency import frequency_from_directory, frequency_from_file, get_tokens
 
 __author__: str = "Dominic Davis-Foster"
 __copyright__: str = "2020 Dominic Davis-Foster"
@@ -57,7 +53,10 @@ __license__: str = "MIT License"
 __version__: str = "0.1.0"
 __email__: str = "dominic@davis-foster.co.uk"
 
-__all__ = ["Wordle", "export_wordcloud", "get_tokens"]
+__all__ = ["Wordle", "export_wordcloud"]
+
+# this package
+from wordle.utils import clone_into_tmpdir
 
 
 class Wordle(WordCloud):
@@ -133,7 +132,7 @@ class Wordle(WordCloud):
 	:param min_word_length: Minimum number of letters a word must have to be included.
 	:param random_state: Seed for the randomness that determines the colour and position of words.
 
-	.. note:
+	.. note::
 
 		Larger canvases with make the code significantly slower. If you need a
 		large word cloud, try a lower canvas size, and set the scale parameter.
@@ -218,28 +217,25 @@ class Wordle(WordCloud):
 
 	def generate_from_file(
 			self,
-			filename: Union[str, pathlib.Path, os.PathLike],
-			outfile: Optional[Union[str, pathlib.Path, os.PathLike]] = None,
-			exclude_words: Optional[Sequence[str]] = None,
+			filename: PathLike,
+			outfile: Optional[PathLike] = None,
+			*,
+			exclude_words: Sequence[str] = (),
 			max_font_size: Optional[int] = None
 			) -> "Wordle":
 		"""
 		Create a word_cloud from a source code file.
 
 		:param filename: The file to process
-		:param outfile: The file to save the wordle as. Supported formats are ``PNG``, ``JPEG`` and SVG.
+		:param outfile: The file to save the wordle as. Supported formats are ``PNG``, ``JPEG`` and ``SVG``.
 			If :py:obj:`None` the wordle is not saved
 		:param exclude_words: An optional list of words to exclude
 		:param max_font_size: Use this font-size instead of :attr:`~Wordle.max_font_size`.
+
+		.. versionchanged:: 0.2.0  ``exclude_words``, ``max_font_size`` are now keyword-only.
 		"""
 
-		word_counts = get_tokens(filename)
-		if exclude_words is None:
-			exclude_words = []
-
-		for word in exclude_words:
-			if word in word_counts:
-				del word_counts[word]
+		word_counts = frequency_from_file(filename, exclude_words)
 
 		self.generate_from_frequencies(word_counts, max_font_size=max_font_size)
 
@@ -252,8 +248,9 @@ class Wordle(WordCloud):
 			self,
 			directory: PathLike,
 			outfile: Optional[PathLike] = None,
-			exclude_words: Optional[Sequence[str]] = None,
-			exclude_dirs: Optional[Sequence[PathLike]] = None,
+			*,
+			exclude_words: Sequence[str] = (),
+			exclude_dirs: Sequence[PathLike] = (),
 			max_font_size: Optional[int] = None
 			) -> "Wordle":
 		"""
@@ -263,37 +260,18 @@ class Wordle(WordCloud):
 		:param outfile: The file to save the wordle as. Supported formats are ``PNG``, ``JPEG`` and SVG.
 			If :py:obj:`None` the wordle is not saved.
 		:param exclude_words: An optional list of words to exclude
-		:param exclude_dirs: An optional list of directories to exclude
+		:param exclude_dirs: An optional list of directories to exclude.
+			Each entry is treated as a regular expression to match at the beginning of the relative path.
 		:param max_font_size: Use this font-size instead of :attr:`~Wordle.max_font_size`.
+
+		.. versionchanged:: 0.2.0  ``exclude_words``, ``exclude_dirs``, ``max_font_size`` are now keyword-only.
 		"""
 
-		# TODO: only certain file extensions
-
-		directory = pathlib.Path(directory).absolute()
-
-		if exclude_dirs:
-			exclude_dirs_list = [pathlib.Path(d).relative_to(directory) for d in exclude_dirs]
-		else:
-			exclude_dirs_list = []
-
-		if exclude_words is None:
-			exclude_words = []
-
-		def is_excluded(path):
-			for dir_name in exclude_dirs_list:
-				if dir_name in path.stem:
-					return True
-			return False
-
-		word_counts: typing.Counter[str] = Counter()
-
-		for file in directory.rglob("**/*.*"):
-			if file.is_file() and not is_excluded(file):
-				word_counts += get_tokens(file)
-
-		for word in exclude_words:
-			if word in word_counts:
-				del word_counts[word]
+		word_counts: typing.Counter[str] = frequency_from_directory(
+				directory,
+				exclude_words=exclude_words,
+				exclude_dirs=exclude_dirs,
+				)
 
 		self.generate_from_frequencies(word_counts, max_font_size=max_font_size)
 
@@ -309,8 +287,11 @@ class Wordle(WordCloud):
 			self,
 			git_url: str,
 			outfile: Optional[PathLike] = None,
-			exclude_words: Optional[Sequence[str]] = None,
-			exclude_dirs: Optional[Sequence[PathLike]] = None,
+			*,
+			sha: Optional[str] = None,
+			depth: Optional[int] = None,
+			exclude_words: Sequence[str] = (),
+			exclude_dirs: Sequence[PathLike] = (),
 			max_font_size: Optional[int] = None
 			) -> "Wordle":
 		"""
@@ -319,16 +300,21 @@ class Wordle(WordCloud):
 		:param git_url: The url of the git repository to process
 		:param outfile: The file to save the wordle as. Supported formats are ``PNG``, ``JPEG`` and SVG.
 			If :py:obj:`None` the wordle is not saved
-		:param exclude_words: An optional list of words to exclude
-		:param exclude_dirs: An optional list of directories to exclude
-		:param max_font_size: Use this font-size instead of self.max_font_size
+		:param sha: An optional SHA hash of a commit to checkout.
+		:param depth: An optional depth to clone at. If :py:obj:`None` and ``sha`` is :py:obj:`None` the depth is ``1``.
+			If :py:obj:`None` and ``sha`` is given the depth is unlimited.
+		:param exclude_words: An optional list of words to exclude.
+		:param exclude_dirs: An optional list of directories to exclude.
+		:param max_font_size: Use this font-size instead of self.max_font_size.
+
+		.. versionchanged:: 0.2.0
+
+			* ``exclude_words``, ``exclude_dirs``, ``max_font_size`` are now keyword-only.
+			* Added the ``sha`` and ``depth`` keyword-only arguments.
 		"""
 
-		# TODO: only certain file extensions
-
 		with tempfile.TemporaryDirectory() as tmpdir:
-			directory = pathlib.Path(tmpdir)
-			porcelain.clone(git_url, target=str(directory), depth=1)
+			clone_into_tmpdir(git_url, tmpdir, sha=sha, depth=depth)
 
 			self.generate_from_directory(
 					tmpdir,
@@ -353,10 +339,8 @@ class Wordle(WordCloud):
 
 		:param random_state: If not :py:obj:`None`, a fixed random state is used.
 			If an :class:`int` is given, this is used as seed for a :class:`random.Random` state.
-
 		:param color_func:  Function to generate new color from word count, font size, position and orientation.
 			If :py:obj:`None`, :attr:`~Wordle.color_func` is used.
-
 		:param colormap: Use this colormap to generate new colors.
 			Ignored if ``color_func`` is specified. If :py:obj:`None`,
 			:attr:`~Wordle.color_func` or :attr:`~Wordle.color_map` is used.
@@ -402,11 +386,9 @@ class Wordle(WordCloud):
 		Export the wordle to an SVG.
 
 		:param embed_font: Whether to include font inside resulting SVG file.
-
 		:param optimize_embedded_font: Whether to be aggressive when embedding a font, to reduce size.
 			In particular, hinting tables are dropped, which may introduce slight
 			changes to character shapes (w.r.t. `to_image` baseline).
-
 		:param embed_image: Whether to include rasterized image inside resulting SVG file.
 			Useful for debugging.
 
@@ -421,7 +403,7 @@ def export_wordcloud(word_cloud: WordCloud, outfile: PathLike) -> None:
 	Export a wordcloud to a file.
 
 	:param word_cloud:
-	:param outfile: The file to export the wordcloud to
+	:param outfile: The file to export the wordcloud to.
 	"""
 
 	outfile = pathlib.Path(outfile)
@@ -430,91 +412,3 @@ def export_wordcloud(word_cloud: WordCloud, outfile: PathLike) -> None:
 		outfile.write_text(word_cloud.to_svg())
 	else:
 		word_cloud.to_file(str(outfile))
-
-
-def get_tokens(filename: PathLike) -> typing.Counter[str]:
-	"""
-	Returns a :class:`collections.Counter` of the tokens in a file.
-
-	:param filename: The file to parse
-
-	:return: A count of words etc. in the file
-	"""
-
-	total: typing.Counter[str] = Counter()
-
-	if not isinstance(filename, pathlib.Path):
-		filename = pathlib.Path(filename)
-
-	try:
-		lex = pygments.lexers.get_lexer_for_filename(filename)
-	except pygments.util.ClassNotFound:
-		return total
-
-	for token in lex.get_tokens(filename.read_text()):
-		if token[0] in pygments.token.Comment:
-			continue
-
-		if token[0] in pygments.token.Text:
-			if token[1] == '\n':
-				continue
-			if token[1] == ' ':
-				continue
-			if re.match(r"^\t*$", token[1]):
-				continue
-			if re.match(r"^\s*$", token[1]):
-				continue
-
-		if token[0] in pygments.token.String:
-			if token[1] == '"':
-				continue
-
-			if token[0] in pygments.token.String.Escape:
-				if re.match(r"\\*", token[1]):
-					continue
-
-		if token[0] in pygments.token.String.Double:
-			if token[1] in '\n':
-				continue
-			if re.match(r'^"*$', token[1]):
-				continue
-
-		if token[0] in pygments.token.String.Single:
-			if token[1] in '\n':
-				continue
-			if re.match(r"^'*$", token[1]):
-				continue
-
-		if token[0] in pygments.token.Punctuation and token[1] in "[],{}:();":
-			continue
-
-		if token[0] in pygments.token.Operator:
-			continue
-
-		if token[0] in pygments.token.String.Affix:
-			continue
-
-		if token[0] in pygments.token.String.Interpol and token[1] in "{}":
-			continue
-
-		if re.match("^:*$", token[1]):
-			continue
-
-		total += Counter(token[1].split(' '))
-
-	if '' in total:
-		del total['']
-
-	for char in punctuation:
-		if char in total:
-			del total[char]
-
-	all_words: typing.Counter[str] = Counter()
-
-	for word in total:
-		if word.endswith(':'):
-			all_words[word.rstrip(':')] = total[word]
-		else:
-			all_words[word] = total[word]
-
-	return all_words

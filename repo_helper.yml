@@ -7,10 +7,9 @@ username: "domdfcoding"
 license: 'MIT'
 short_desc: 'Create a wordcloud for a Git repository.'
 
-enable_tests: False
 enable_conda: False
 
-python_deploy_version: 3.6
+python_deploy_version: 3.7
 
 # Versions to run tests for
 python_versions:
@@ -18,6 +17,7 @@ python_versions:
   - '3.7'
   - '3.8'
   - '3.9'
+  - '3.10-dev'
 
 classifiers:
   - "Development Status :: 3 - Alpha"
