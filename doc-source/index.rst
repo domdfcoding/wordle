@@ -131,8 +131,10 @@ Can also create wordclouds from directories of source files or a single source f
 .. toctree::
 	:maxdepth: 3
 	:caption: Documentation
+	:glob:
 
-	API Reference<docs>
+	api/wordle
+	api/*
 	examples
 
 .. toctree::

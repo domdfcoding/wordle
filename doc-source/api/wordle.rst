@@ -1,5 +1,5 @@
 ===============
-API Reference
+:mod:`wordle`
 ===============
 
 .. automodule:: wordle
