@@ -1,5 +1,5 @@
 # stdlib
-from typing import Dict, Mapping, Optional, Sequence, Union
+from typing import Mapping, Optional, Sequence, Union
 
 # 3rd party
 import pytest
@@ -75,7 +75,7 @@ def test_github_repo(tmp_pathplus, image_regression: ImageRegressionFixture):
 			)
 	export_wordcloud(w, outfile=tmp_pathplus / "git_wordcloud.png")
 
-	image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes())
+	image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes(), diff_threshold=3)
 
 
 def test_github_repo_exclude_tests(tmp_pathplus, image_regression: ImageRegressionFixture):
@@ -89,7 +89,7 @@ def test_github_repo_exclude_tests(tmp_pathplus, image_regression: ImageRegressi
 			)
 	export_wordcloud(w, outfile=tmp_pathplus / "git_wordcloud.png")
 
-	image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes())
+	image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes(), diff_threshold=3)
 
 
 def test_github_repo_exclude_words(tmp_pathplus, image_regression: ImageRegressionFixture):
@@ -103,7 +103,7 @@ def test_github_repo_exclude_words(tmp_pathplus, image_regression: ImageRegressi
 			)
 	export_wordcloud(w, outfile=tmp_pathplus / "git_wordcloud.png")
 
-	image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes())
+	image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes(), diff_threshold=3)
 
 
 def test_github_repo_frequency(tmp_pathplus, counter_regression: CounterRegressionFixture):
