@@ -27,4 +27,4 @@ classifiers:
 
 imgbot_ignore:
   - "examples/*"
-  - "tests/test_wordle_/*.png"
+  - "tests/test_wordle_/*"

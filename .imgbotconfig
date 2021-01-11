@@ -3,6 +3,6 @@
     "ignoredFiles": [
         "**/*.svg",
         "examples/*",
-        "tests/test_wordle_/*.png"
+        "tests/test_wordle_/*"
     ]
 }
