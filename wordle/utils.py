@@ -35,6 +35,7 @@ from typing import Optional
 # 3rd party
 from domdf_python_tools.typing import PathLike
 from dulwich import porcelain
+from southwark import clone
 
 __all__ = ["clone_into_tmpdir"]
 
@@ -61,7 +62,7 @@ def clone_into_tmpdir(
 		depth = 1
 
 	directory = pathlib.Path(tmpdir)
-	porcelain.clone(git_url, target=str(directory), depth=depth)
+	clone(git_url, target=str(directory), depth=depth)
 
 	if sha is not None:
 		porcelain.reset(tmpdir, mode="hard", treeish=sha)
