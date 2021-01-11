@@ -34,7 +34,7 @@ import pathlib
 import sys
 import tempfile
 from contextlib import suppress
-from typing import Optional, no_type_check
+from typing import ContextManager, Optional
 
 # 3rd party
 from domdf_python_tools.compat import nullcontext
@@ -74,7 +74,7 @@ def clone_into_tmpdir(
 
 	try:
 		name = "wordle_user"
-		StackedConfig.default_backends = lambda *args: []
+		StackedConfig.default_backends = lambda *args: []  # type: ignore
 		os.environ["USER"] = os.environ.get("USER", name)
 
 		clone(git_url, target=str(directory), depth=depth)
@@ -85,15 +85,16 @@ def clone_into_tmpdir(
 	finally:
 		os.environ.clear()
 		os.environ.update(_environ)
-		StackedConfig.default_backends = _default_backends
+		StackedConfig.default_backends = _default_backends  # type: ignore
 
 	return directory
 
 
-@no_type_check
 class _TemporaryDirectory(tempfile.TemporaryDirectory):
 
 	def cleanup(self):
+		context: ContextManager
+
 		if sys.platform == "win32":
 			context = suppress(PermissionError)
 		else:
