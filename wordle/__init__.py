@@ -33,7 +33,8 @@ Create wordclouds from git repositories, directories and source files.
 # stdlib
 import os
 import pathlib
-import tempfile
+import sys
+import time
 import typing
 from typing import Callable, Optional, Sequence, Union
 
@@ -46,7 +47,7 @@ from wordcloud import WordCloud  # type: ignore
 
 # this package
 from wordle.frequency import frequency_from_directory, frequency_from_file, get_tokens
-from wordle.utils import clone_into_tmpdir
+from wordle.utils import _TemporaryDirectory, clone_into_tmpdir
 
 __author__: str = "Dominic Davis-Foster"
 __copyright__: str = "2020 Dominic Davis-Foster"
@@ -311,7 +312,7 @@ class Wordle(WordCloud):
 			* Added the ``sha`` and ``depth`` keyword-only arguments.
 		"""
 
-		with tempfile.TemporaryDirectory() as tmpdir:
+		with _TemporaryDirectory() as tmpdir:
 			clone_into_tmpdir(git_url, tmpdir, sha=sha, depth=depth)
 
 			self.generate_from_directory(
@@ -321,6 +322,9 @@ class Wordle(WordCloud):
 					exclude_words=exclude_words,
 					max_font_size=max_font_size,
 					)
+
+			if sys.platform == "win32":
+				time.sleep(5)
 
 		return self
 

@@ -28,6 +28,7 @@
 '2020': 1
 '4': 1
 '400': 1
+'5': 1
 :attr:`~Wordle.color_func`: 2
 :attr:`~Wordle.color_map`: 1
 :attr:`~Wordle.max_font_size`.: 2
@@ -96,7 +97,6 @@ Smallest: 1
 Step: 1
 Supported: 3
 TTF).: 1
-TemporaryDirectory: 1
 The: 15
 To: 1
 Transparent: 1
@@ -109,6 +109,7 @@ Will: 1
 With: 2
 WordCloud: 3
 Wordle: 6
+_TemporaryDirectory: 2
 __all__: 1
 __array__: 2
 __author__: 1
@@ -289,12 +290,12 @@ height: 6
 heuristic.: 1
 hinting: 1
 horizontal: 1
-if: 8
+if: 9
 ignored: 1
 image: 4
 image.: 3
 images,: 1
-import: 12
+import: 13
 in: 3
 include: 4
 include_numbers: 3
@@ -368,6 +369,7 @@ path: 2
 path.: 2
 pathlib: 2
 phrases: 2
+platform: 1
 position: 2
 prefer_horizontal: 4
 process: 3
@@ -418,6 +420,7 @@ single: 2
 size: 4
 size,: 2
 size.: 3
+sleep: 1
 slight: 1
 slower.: 1
 source: 5
@@ -433,8 +436,8 @@ stop: 1
 str: 21
 suffix: 1
 super: 7
+sys: 2
 tables: 1
-tempfile: 2
 text: 1
 than: 2
 that: 3
@@ -442,6 +445,7 @@ the: 46
 their: 2
 there: 1
 this: 8
+time: 2
 times: 1
 tmpdir: 3
 to: 47
@@ -483,6 +487,7 @@ white: 1
 whole: 1
 width: 5
 will: 10
+win32: 1
 with: 5
 word: 10
 word-cloud: 1

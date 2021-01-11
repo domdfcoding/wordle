@@ -31,7 +31,6 @@ Functions to determine word token frequency for wordclouds.
 # stdlib
 import pathlib
 import re
-import tempfile
 import typing
 from collections import Counter
 from string import punctuation
@@ -41,10 +40,11 @@ from typing import Optional, Sequence
 import pygments.lexers  # type: ignore
 import pygments.token  # type: ignore
 import pygments.util  # type: ignore
+from domdf_python_tools.paths import PathPlus
 from domdf_python_tools.typing import PathLike
 
 # this package
-from wordle.utils import clone_into_tmpdir
+from wordle.utils import _TemporaryDirectory, clone_into_tmpdir
 
 __all__ = ["frequency_from_directory", "frequency_from_file", "frequency_from_git", "get_tokens"]
 
@@ -60,8 +60,7 @@ def get_tokens(filename: PathLike) -> typing.Counter[str]:
 
 	total: typing.Counter[str] = Counter()
 
-	if not isinstance(filename, pathlib.Path):
-		filename = pathlib.Path(filename)
+	filename = PathPlus(filename)
 
 	try:
 		lex = pygments.lexers.get_lexer_for_filename(filename)
@@ -231,7 +230,7 @@ def frequency_from_git(
 	.. versionadded:: 0.2.0
 	"""
 
-	with tempfile.TemporaryDirectory() as tmpdir:
+	with _TemporaryDirectory() as tmpdir:
 		clone_into_tmpdir(git_url, tmpdir, sha=sha, depth=depth)
 
 		return frequency_from_directory(
