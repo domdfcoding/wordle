@@ -86,7 +86,7 @@ class _TemporaryDirectory(tempfile.TemporaryDirectory):
 		context: ContextManager
 
 		if sys.platform == "win32":
-			context = suppress(PermissionError)
+			context = suppress(PermissionError, NotADirectoryError)
 		else:
 			context = nullcontext()
 
