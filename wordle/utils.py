@@ -33,7 +33,7 @@ import os
 import pathlib
 import sys
 import tempfile
-from contextlib import suppress
+from contextlib import redirect_stderr, suppress
 from typing import ContextManager, Optional
 
 # 3rd party
@@ -72,7 +72,9 @@ def clone_into_tmpdir(
 	_default_backends = StackedConfig.default_backends
 
 	with windows_clone_helper():
-		repo = clone(git_url, target=str(directory), depth=depth)
+		with open(os.devnull) as devnull:
+			with redirect_stderr(devnull):
+				repo = clone(git_url, target=str(directory), depth=depth)
 
 		if sha is not None:
 			repo.reset_to(sha)
