@@ -28,3 +28,6 @@ classifiers:
 imgbot_ignore:
   - "examples/*"
   - "tests/test_wordle_/*"
+
+tox_requirements:
+  - "tox-pip-version>=0.0.7"
