@@ -75,7 +75,7 @@ def test_github_repo(tmp_pathplus, image_regression: ImageRegressionFixture):
 			)
 	export_wordcloud(w, outfile=tmp_pathplus / "git_wordcloud.png")
 
-	image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes(), diff_threshold=3)
+	image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes(), diff_threshold=3.5)
 
 	# The results should be different for a different commit
 	w.generate_from_git(
@@ -86,7 +86,7 @@ def test_github_repo(tmp_pathplus, image_regression: ImageRegressionFixture):
 	export_wordcloud(w, outfile=tmp_pathplus / "git_wordcloud.png")
 
 	with pytest.raises(AssertionError, match="Difference between images too high"):
-		image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes(), diff_threshold=3)
+		image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes(), diff_threshold=3.5)
 
 
 def test_github_repo_exclude_tests(tmp_pathplus, image_regression: ImageRegressionFixture):
@@ -100,7 +100,7 @@ def test_github_repo_exclude_tests(tmp_pathplus, image_regression: ImageRegressi
 			)
 	export_wordcloud(w, outfile=tmp_pathplus / "git_wordcloud.png")
 
-	image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes(), diff_threshold=3)
+	image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes(), diff_threshold=3.5)
 
 
 def test_github_repo_exclude_words(tmp_pathplus, image_regression: ImageRegressionFixture):
@@ -114,7 +114,7 @@ def test_github_repo_exclude_words(tmp_pathplus, image_regression: ImageRegressi
 			)
 	export_wordcloud(w, outfile=tmp_pathplus / "git_wordcloud.png")
 
-	image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes(), diff_threshold=3)
+	image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes(), diff_threshold=3.5)
 
 
 def test_github_repo_frequency(tmp_pathplus, counter_regression: CounterRegressionFixture):
