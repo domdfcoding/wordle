@@ -1,8 +1,12 @@
-domdf-python-tools>=2.1.0
+# TODO: Numpy is broken in Windows 2004 except for 1.19.3+
+# A fix should be out by end of Jan 2021 🙈
+# https://developercommunity.visualstudio.com/content/problem/1207405/fmod-after-an-update-to-windows-2004-is-causing-a.html
+domdf-python-tools>=2.2.0
 dulwich>=0.20.6
 matplotlib>=3.2.2; platform_machine != "aarch64" or python_version > "3.6"
 matplotlib==3.2.2; platform_machine == "aarch64" and python_version == "3.6"
-numpy>=1.19.2
-pygments>=2.7.1
+numpy>=1.19.2; platform_system != "Windows"
+numpy!=1.19.4,<1.20,>=1.19.3; platform_system == "Windows"
+pygments>=2.7.4
 southwark>=0.8.0
 wordcloud>=1.8.0
