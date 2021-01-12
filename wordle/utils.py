@@ -39,9 +39,8 @@ from typing import ContextManager, Optional
 # 3rd party
 from domdf_python_tools.compat import nullcontext
 from domdf_python_tools.typing import PathLike
-from dulwich import porcelain
 from dulwich.config import StackedConfig
-from southwark import clone
+from southwark import clone, windows_clone_helper
 
 __all__ = ["clone_into_tmpdir"]
 
@@ -72,20 +71,11 @@ def clone_into_tmpdir(
 	_environ = dict(os.environ)  # or os.environ.copy()
 	_default_backends = StackedConfig.default_backends
 
-	try:
-		name = "wordle_user"
-		StackedConfig.default_backends = lambda *args: []  # type: ignore
-		os.environ["USER"] = os.environ.get("USER", name)
-
-		clone(git_url, target=str(directory), depth=depth)
+	with windows_clone_helper():
+		repo = clone(git_url, target=str(directory), depth=depth)
 
 		if sha is not None:
-			porcelain.reset(tmpdir, mode="hard", treeish=sha)
-
-	finally:
-		os.environ.clear()
-		os.environ.update(_environ)
-		StackedConfig.default_backends = _default_backends  # type: ignore
+			repo.reset_to(sha)
 
 	return directory
 

@@ -77,6 +77,17 @@ def test_github_repo(tmp_pathplus, image_regression: ImageRegressionFixture):
 
 	image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes(), diff_threshold=3)
 
+	# The results should be different for a different commit
+	w.generate_from_git(
+			"https://github.com/domdfcoding/domdf_python_tools",
+			outfile=tmp_pathplus / "git_wordcloud.svg",
+			sha="c30106567a27a17a5bd1339409ca22b6d425a25f",
+			)
+	export_wordcloud(w, outfile=tmp_pathplus / "git_wordcloud.png")
+
+	with pytest.raises(AssertionError, match="Difference between images too high"):
+		image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes(), diff_threshold=3)
+
 
 def test_github_repo_exclude_tests(tmp_pathplus, image_regression: ImageRegressionFixture):
 	w = Wordle(random_state=5678)
