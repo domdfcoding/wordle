@@ -55,7 +55,7 @@ __license__: str = "MIT License"
 __version__: str = "0.1.0"
 __email__: str = "dominic@davis-foster.co.uk"
 
-__all__ = ["Wordle", "export_wordcloud"]
+__all__ = ["Wordle", "export_wordcloud", "get_tokens"]
 
 
 class Wordle(WordCloud):
