@@ -90,13 +90,13 @@ def get_tokens(filename: PathLike) -> typing.Counter[str]:
 					continue
 
 		if token[0] in pygments.token.String.Double:
-			if token[1] in '\n':
+			if token[1] == '\n':
 				continue
 			if re.match(r'^"*$', token[1]):
 				continue
 
 		if token[0] in pygments.token.String.Single:
-			if token[1] in '\n':
+			if token[1] == '\n':
 				continue
 			if re.match(r"^'*$", token[1]):
 				continue

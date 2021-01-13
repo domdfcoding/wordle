@@ -207,7 +207,7 @@ class Wordle(WordCloud):
 				random_state=random_state,
 				)
 
-	def __array__(self) -> numpy.ndarray:
+	def __array__(self) -> numpy.ndarray:  # pragma: no cover (typed wrapper)
 		"""
 		Returns the wordcloud image as numpy array.
 		"""
@@ -324,16 +324,16 @@ class Wordle(WordCloud):
 					)
 
 			if sys.platform == "win32":
-				time.sleep(5)
+				time.sleep(5)  # pragma: no cover (!Windows)
 
 		return self
 
-	def recolor(
-			self,
-			random_state: Union[RandomState, int, None] = None,
-			color_func: Optional[Callable] = None,
-			colormap: Union[None, str, Colormap] = None,
-			) -> "Wordle":
+	def recolor(  # pragma: no cover (typed wrapper)
+		self,
+		random_state: Union[RandomState, int, None] = None,
+		color_func: Optional[Callable] = None,
+		colormap: Union[None, str, Colormap] = None,
+		) -> "Wordle":
 		"""
 		Recolour the existing layout.
 
@@ -352,7 +352,7 @@ class Wordle(WordCloud):
 
 		return super().recolor(random_state, color_func, colormap)
 
-	def to_array(self):
+	def to_array(self):  # pragma: no cover (typed wrapper)
 		"""
 		Returns the wordcloud image as numpy array.
 		"""
