@@ -1,3 +1,4 @@
+apeye>=0.5.1
 coverage>=5.1
 coverage-pyver-pragma>=0.0.6
 domdf-python-tools[testing]>=2.0.1

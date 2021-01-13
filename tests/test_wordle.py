@@ -3,6 +3,7 @@ from typing import Mapping, Optional, Sequence, Union
 
 # 3rd party
 import pytest
+from apeye import RequestsURL
 from domdf_python_tools.paths import PathPlus
 from pytest_regressions.data_regression import DataRegressionFixture
 from pytest_regressions.image_regression import ImageRegressionFixture
@@ -55,14 +56,17 @@ def test_python_source_file(
 		):
 	w = Wordle(random_state=5678)
 
-	src_file = src_dir / "__init__.py"
 	outfile = tmp_pathplus / "python_wordcloud.png"
 
-	w.generate_from_file(src_file, outfile=tmp_pathplus / "python_wordcloud.svg")
+	source_url = RequestsURL("https://raw.githubusercontent.com/domdfcoding/wordle")
+	source_url / "76797ba8b641b38fe1bed0801f0af248b793b59e/wordle/__init__.py"
+	(tmp_pathplus / "source.py").write_bytes(source_url.get().content)
+
+	w.generate_from_file(tmp_pathplus / "source.py", outfile=tmp_pathplus / "python_wordcloud.svg")
 	export_wordcloud(w, outfile=outfile)
 
 	image_regression.check(outfile.read_bytes())
-	counter_regression.check(frequency_from_file(src_file))
+	counter_regression.check(frequency_from_file(tmp_pathplus / "source.py"))
 
 
 def test_github_repo(tmp_pathplus, image_regression: ImageRegressionFixture):
