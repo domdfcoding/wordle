@@ -276,7 +276,7 @@ generate_from_frequencies.: 2
 generate_from_git: 1
 generated: 1
 get: 1
-get_tokens: 1
+get_tokens: 2
 git: 2
 git_url: 1
 give: 2
