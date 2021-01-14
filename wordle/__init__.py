@@ -52,7 +52,7 @@ from wordle.utils import _TemporaryDirectory, clone_into_tmpdir
 __author__: str = "Dominic Davis-Foster"
 __copyright__: str = "2020 Dominic Davis-Foster"
 __license__: str = "MIT License"
-__version__: str = "0.2.0"
+__version__: str = "0.2.1"
 __email__: str = "dominic@davis-foster.co.uk"
 
 __all__ = ["Wordle", "export_wordcloud", "get_tokens"]
@@ -231,7 +231,7 @@ class Wordle(WordCloud):
 		:param exclude_words: An optional list of words to exclude
 		:param max_font_size: Use this font-size instead of :attr:`~Wordle.max_font_size`.
 
-		.. versionchanged:: 0.2.0  ``exclude_words``, ``max_font_size`` are now keyword-only.
+		.. versionchanged:: 0.2.1  ``exclude_words``, ``max_font_size`` are now keyword-only.
 		"""
 
 		word_counts = frequency_from_file(filename, exclude_words)
@@ -263,7 +263,7 @@ class Wordle(WordCloud):
 			Each entry is treated as a regular expression to match at the beginning of the relative path.
 		:param max_font_size: Use this font-size instead of :attr:`~Wordle.max_font_size`.
 
-		.. versionchanged:: 0.2.0  ``exclude_words``, ``exclude_dirs``, ``max_font_size`` are now keyword-only.
+		.. versionchanged:: 0.2.1  ``exclude_words``, ``exclude_dirs``, ``max_font_size`` are now keyword-only.
 		"""
 
 		word_counts: typing.Counter[str] = frequency_from_directory(
@@ -306,7 +306,7 @@ class Wordle(WordCloud):
 		:param exclude_dirs: An optional list of directories to exclude.
 		:param max_font_size: Use this font-size instead of self.max_font_size.
 
-		.. versionchanged:: 0.2.0
+		.. versionchanged:: 0.2.1
 
 			* ``exclude_words``, ``exclude_dirs``, ``max_font_size`` are now keyword-only.
 			* Added the ``sha`` and ``depth`` keyword-only arguments.
