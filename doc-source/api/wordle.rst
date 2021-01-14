@@ -3,4 +3,4 @@
 ===============
 
 .. automodule:: wordle
-	:skip-members: get_tokens
+	:exclude-members: get_tokens
