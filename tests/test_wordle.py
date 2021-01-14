@@ -59,7 +59,7 @@ def test_python_source_file(
 	outfile = tmp_pathplus / "python_wordcloud.png"
 
 	source_url = RequestsURL("https://raw.githubusercontent.com/domdfcoding/wordle")
-	source_url / "76797ba8b641b38fe1bed0801f0af248b793b59e/wordle/__init__.py"
+	source_url = source_url / "76797ba8b641b38fe1bed0801f0af248b793b59e/wordle/__init__.py"
 	(tmp_pathplus / "source.py").write_bytes(source_url.get().content)
 
 	w.generate_from_file(tmp_pathplus / "source.py", outfile=tmp_pathplus / "python_wordcloud.svg")
