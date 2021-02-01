@@ -5,7 +5,7 @@
 Create wordclouds from git repositories, directories and source files.
 """
 #
-#  Copyright (c) 2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
+#  Copyright (c) 2020-2021 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -39,7 +39,7 @@ import typing
 from typing import Callable, Optional, Sequence, Union
 
 # 3rd party
-import numpy  # type: ignore
+import numpy
 from domdf_python_tools.typing import PathLike
 from matplotlib.colors import Colormap  # type: ignore
 from numpy.random.mtrand import RandomState  # type: ignore
