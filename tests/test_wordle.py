@@ -3,7 +3,7 @@ from typing import Mapping, Optional, Sequence, Union
 
 # 3rd party
 import pytest
-from apeye import RequestsURL
+from apeye.requests_url import RequestsURL
 from domdf_python_tools.paths import PathPlus
 from pytest_regressions.data_regression import DataRegressionFixture
 from pytest_regressions.image_regression import ImageRegressionFixture
