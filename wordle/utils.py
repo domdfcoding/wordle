@@ -72,7 +72,7 @@ def clone_into_tmpdir(
 	_default_backends = StackedConfig.default_backends
 
 	with windows_clone_helper():
-		with open(os.devnull) as devnull:
+		with open(os.devnull, encoding="UTF-8") as devnull:
 			with redirect_stderr(devnull):
 				repo = clone(git_url, target=str(directory), depth=depth)
 
