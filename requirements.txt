@@ -7,3 +7,4 @@ numpy!=1.19.4,>=1.19.3; platform_system == "Windows"
 pygments>=2.7.4
 southwark>=0.8.0
 wordcloud>=1.8.0
+pillow<=8.1.2
