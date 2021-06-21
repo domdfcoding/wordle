@@ -32,3 +32,8 @@ imgbot_ignore:
 
 tox_requirements:
   - "tox-pip-version>=0.0.7"
+
+third_party_version_matrix:
+  pillow:
+    - 8.1
+    - 8.2

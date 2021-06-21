@@ -2,6 +2,7 @@
 from typing import Mapping, Optional, Sequence, Union
 
 # 3rd party
+import PIL  # type: ignore
 import pytest
 from apeye.requests_url import RequestsURL
 from domdf_python_tools.paths import PathPlus
@@ -14,6 +15,16 @@ from wordle.frequency import frequency_from_git
 
 examples_dir = PathPlus(__file__).parent.parent / "examples"
 src_dir = PathPlus(__file__).parent.parent / "wordle"
+
+PILLOW_VERSION = int(''.join(PIL.__version__.split('.')[:2]))
+
+pillow_version_params = pytest.mark.parametrize(
+		"pillow_version",
+		[
+				pytest.param(81, marks=pytest.mark.skipif(PILLOW_VERSION >= 82, reason="Output differs on pillow 8.2.x")),
+				pytest.param(82, marks=pytest.mark.skipif(PILLOW_VERSION < 82, reason="Output differs on pillow 8.2.x")),
+				]
+		)
 
 
 class CounterRegressionFixture(DataRegressionFixture):
@@ -32,7 +43,9 @@ def counter_regression(datadir, original_datadir, request):
 	return CounterRegressionFixture(datadir, original_datadir, request)
 
 
+@pillow_version_params
 def test_c_source_file(
+		pillow_version,
 		tmp_pathplus,
 		image_regression: ImageRegressionFixture,
 		counter_regression: CounterRegressionFixture,
@@ -49,7 +62,9 @@ def test_c_source_file(
 	counter_regression.check(frequency_from_file(src_file))
 
 
+@pillow_version_params
 def test_python_source_file(
+		pillow_version,
 		tmp_pathplus,
 		image_regression: ImageRegressionFixture,
 		counter_regression: CounterRegressionFixture,
@@ -69,7 +84,8 @@ def test_python_source_file(
 	counter_regression.check(frequency_from_file(tmp_pathplus / "source.py"))
 
 
-def test_github_repo(tmp_pathplus, image_regression: ImageRegressionFixture):
+@pillow_version_params
+def test_github_repo(pillow_version, tmp_pathplus, image_regression: ImageRegressionFixture):
 	w = Wordle(random_state=5678)
 
 	w.generate_from_git(
@@ -93,7 +109,8 @@ def test_github_repo(tmp_pathplus, image_regression: ImageRegressionFixture):
 		image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes(), diff_threshold=3.5)
 
 
-def test_github_repo_exclude_tests(tmp_pathplus, image_regression: ImageRegressionFixture):
+@pillow_version_params
+def test_github_repo_exclude_tests(pillow_version, tmp_pathplus, image_regression: ImageRegressionFixture):
 	w = Wordle(random_state=5678)
 
 	w.generate_from_git(
@@ -107,7 +124,8 @@ def test_github_repo_exclude_tests(tmp_pathplus, image_regression: ImageRegressi
 	image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes(), diff_threshold=3.5)
 
 
-def test_github_repo_exclude_words(tmp_pathplus, image_regression: ImageRegressionFixture):
+@pillow_version_params
+def test_github_repo_exclude_words(pillow_version, tmp_pathplus, image_regression: ImageRegressionFixture):
 	w = Wordle(random_state=5678)
 
 	w.generate_from_git(
@@ -121,7 +139,8 @@ def test_github_repo_exclude_words(tmp_pathplus, image_regression: ImageRegressi
 	image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes(), diff_threshold=3.5)
 
 
-def test_github_repo_frequency(tmp_pathplus, counter_regression: CounterRegressionFixture):
+@pillow_version_params
+def test_github_repo_frequency(pillow_version, tmp_pathplus, counter_regression: CounterRegressionFixture):
 	frequency = frequency_from_git(
 			"https://github.com/domdfcoding/domdf_python_tools",
 			sha="de815f593718e16c031bc70e9c24b5635c3144dc",
