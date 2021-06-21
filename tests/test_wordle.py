@@ -21,8 +21,11 @@ PILLOW_VERSION = int(''.join(PIL.__version__.split('.')[:2]))
 pillow_version_params = pytest.mark.parametrize(
 		"pillow_version",
 		[
-				pytest.param(81, marks=pytest.mark.skipif(PILLOW_VERSION >= 82, reason="Output differs on pillow 8.2.x")),
-				pytest.param(82, marks=pytest.mark.skipif(PILLOW_VERSION < 82, reason="Output differs on pillow 8.2.x")),
+				pytest.
+				param(81, marks=pytest.mark.skipif(PILLOW_VERSION >= 82, reason="Output differs on pillow 8.2.x")),
+				pytest.param(
+						82, marks=pytest.mark.skipif(PILLOW_VERSION < 82, reason="Output differs on pillow 8.2.x")
+						),
 				]
 		)
 
