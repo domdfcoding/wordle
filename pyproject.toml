@@ -37,10 +37,6 @@ python-implementations = [ "CPython",]
 platforms = [ "Windows", "macOS", "Linux",]
 license-key = "MIT"
 
-[tool.mkrecipe]
-conda-channels = [ "domdfcoding",]
-extras = "all"
-
 [tool.sphinx-pyproject]
 github_username = "domdfcoding"
 github_repository = "wordle"
