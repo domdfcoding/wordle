@@ -42,7 +42,7 @@ from typing import Callable, Optional, Sequence, Union
 import numpy
 from domdf_python_tools.typing import PathLike
 from matplotlib.colors import Colormap  # type: ignore
-from numpy.random.mtrand import RandomState  # type: ignore
+from numpy.random.mtrand import RandomState
 from wordcloud import WordCloud  # type: ignore
 
 # this package
