@@ -16,17 +16,18 @@ jobs:
     runs-on: "macos-latest"
     continue-on-error: ${{ matrix.config.experimental }}
     env:
-      USING_COVERAGE: '3.6,3.7,3.8,3.9,3.10.0-beta.3'
+      USING_COVERAGE: '3.6,3.7,3.8,3.9,3.10,3.11.0-rc.1'
 
     strategy:
       fail-fast: False
       matrix:
         config:
-          - {python-version: "3.6", testenvs: "py36-pillow{8.1,8.2},build", experimental: False}
-          - {python-version: "3.7", testenvs: "py37-pillow{8.1,8.2},build", experimental: False}
-          - {python-version: "3.8", testenvs: "py38-pillow{8.1,8.2},build", experimental: False}
-          - {python-version: "3.9", testenvs: "py39-pillow{8.1,8.2},build", experimental: False}
-          - {python-version: "3.10.0-beta.3", testenvs: "py310-dev-pillow{8.1,8.2},build", experimental: True}
+          - {python-version: "3.6", testenvs: "py36-pillow{8.1,8.2,8.3,8.4},build", experimental: False}
+          - {python-version: "3.7", testenvs: "py37-pillow{8.1,8.2,8.3,8.4,9.0,9.1,9.2},build", experimental: False}
+          - {python-version: "3.8", testenvs: "py38-pillow{8.1,8.2,8.3,8.4,9.0,9.1,9.2},build", experimental: False}
+          - {python-version: "3.9", testenvs: "py39-pillow{8.1,8.2,8.3,8.4,9.0,9.1,9.2},build", experimental: False}
+          - {python-version: "3.10", testenvs: "py310-pillow{8.1,8.2,8.3,8.4,9.0,9.1,9.2},build", experimental: False}
+          - {python-version: "3.11.0-rc.1", testenvs: "py311-dev-pillow{8.1,8.2,8.3,8.4,9.0,9.1,9.2},build", experimental: True}
 
     steps:
       - name: Checkout 🛎️

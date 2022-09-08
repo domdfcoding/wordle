@@ -2,7 +2,7 @@
 from typing import Mapping, Optional, Sequence, Union
 
 # 3rd party
-import PIL  # type: ignore
+import PIL  # type: ignore[import]
 import pytest
 from apeye.requests_url import RequestsURL
 from domdf_python_tools.paths import PathPlus
@@ -49,7 +49,7 @@ def counter_regression(datadir, original_datadir, request):
 @pillow_version_params
 def test_c_source_file(
 		pillow_version,
-		tmp_pathplus,
+		tmp_pathplus: PathPlus,
 		image_regression: ImageRegressionFixture,
 		counter_regression: CounterRegressionFixture,
 		):
@@ -88,7 +88,11 @@ def test_python_source_file(
 
 
 @pillow_version_params
-def test_github_repo(pillow_version, tmp_pathplus, image_regression: ImageRegressionFixture):
+def test_github_repo(
+		pillow_version,
+		tmp_pathplus: PathPlus,
+		image_regression: ImageRegressionFixture,
+		):
 	w = Wordle(random_state=5678)
 
 	w.generate_from_git(
@@ -113,7 +117,11 @@ def test_github_repo(pillow_version, tmp_pathplus, image_regression: ImageRegres
 
 
 @pillow_version_params
-def test_github_repo_exclude_tests(pillow_version, tmp_pathplus, image_regression: ImageRegressionFixture):
+def test_github_repo_exclude_tests(
+		pillow_version,
+		tmp_pathplus: PathPlus,
+		image_regression: ImageRegressionFixture,
+		):
 	w = Wordle(random_state=5678)
 
 	w.generate_from_git(
@@ -128,7 +136,11 @@ def test_github_repo_exclude_tests(pillow_version, tmp_pathplus, image_regressio
 
 
 @pillow_version_params
-def test_github_repo_exclude_words(pillow_version, tmp_pathplus, image_regression: ImageRegressionFixture):
+def test_github_repo_exclude_words(
+		pillow_version,
+		tmp_pathplus: PathPlus,
+		image_regression: ImageRegressionFixture,
+		):
 	w = Wordle(random_state=5678)
 
 	w.generate_from_git(
@@ -143,7 +155,10 @@ def test_github_repo_exclude_words(pillow_version, tmp_pathplus, image_regressio
 
 
 @pillow_version_params
-def test_github_repo_frequency(pillow_version, tmp_pathplus, counter_regression: CounterRegressionFixture):
+def test_github_repo_frequency(
+		pillow_version,
+		counter_regression: CounterRegressionFixture,
+		):
 	frequency = frequency_from_git(
 			"https://github.com/domdfcoding/domdf_python_tools",
 			sha="de815f593718e16c031bc70e9c24b5635c3144dc",

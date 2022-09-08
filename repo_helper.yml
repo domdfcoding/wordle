@@ -14,11 +14,17 @@ use_whey: True
 
 # Versions to run tests for
 python_versions:
-  - '3.6'
-  - '3.7'
-  - '3.8'
-  - '3.9'
-  - '3.10-dev'
+  '3.6':
+   matrix_exclude:
+    pillow:
+     - 9.0
+     - 9.1
+     - 9.2
+  '3.7':
+  '3.8':
+  '3.9':
+  '3.10':
+  '3.11-dev':
 
 classifiers:
   - "Development Status :: 3 - Alpha"
@@ -37,3 +43,8 @@ third_party_version_matrix:
   pillow:
     - 8.1
     - 8.2
+    - 8.3
+    - 8.4
+    - 9.0
+    - 9.1
+    - 9.2
