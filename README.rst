@@ -57,8 +57,8 @@ Can also create wordclouds from directories of source files or a single source f
 	:target: https://github.com/domdfcoding/wordle/actions?query=workflow%3A%22mypy%22
 	:alt: mypy status
 
-.. |requires| image:: https://requires.io/github/domdfcoding/wordle/requirements.svg?branch=master
-	:target: https://requires.io/github/domdfcoding/wordle/requirements/?branch=master
+.. |requires| image:: https://dependency-dash.repo-helper.uk/github/domdfcoding/wordle/badge.svg
+	:target: https://dependency-dash.repo-helper.uk/github/domdfcoding/wordle/
 	:alt: Requirements Status
 
 .. |coveralls| image:: https://img.shields.io/coveralls/github/domdfcoding/wordle/master?logo=coveralls
@@ -100,7 +100,7 @@ Can also create wordclouds from directories of source files or a single source f
 	:target: https://github.com/domdfcoding/wordle/commit/master
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2021
+.. |maintained| image:: https://img.shields.io/maintenance/yes/2022
 	:alt: Maintenance
 
 .. |pypi-downloads| image:: https://img.shields.io/pypi/dm/wordle

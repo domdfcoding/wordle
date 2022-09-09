@@ -4,6 +4,10 @@ name: mypy
 
 on:
   push:
+    branches-ignore:
+      - 'repo-helper-update'
+      - 'pre-commit-ci-update-config'
+      - 'imgbot'
   pull_request:
 
 permissions:
@@ -43,7 +47,7 @@ jobs:
           python -VV
           python -m site
           python -m pip install --upgrade pip setuptools wheel
-          python -m pip install --upgrade tox virtualenv
+          python -m pip install --upgrade tox virtualenv!=20.16.0
 
       - name: "Run mypy"
         if: steps.changes.outputs.code == 'true'

@@ -60,7 +60,8 @@ Can also create wordclouds from directories of source files or a single source f
 		:workflow: mypy
 		:alt: mypy status
 
-	.. |requires| requires-io-shield::
+	.. |requires| image:: https://dependency-dash.repo-helper.uk/github/domdfcoding/wordle/badge.svg
+		:target: https://dependency-dash.repo-helper.uk/github/domdfcoding/wordle/
 		:alt: Requirements Status
 
 	.. |coveralls| coveralls-shield::
@@ -105,7 +106,7 @@ Can also create wordclouds from directories of source files or a single source f
 		:last-commit:
 		:alt: GitHub last commit
 
-	.. |maintained| maintained-shield:: 2021
+	.. |maintained| maintained-shield:: 2022
 		:alt: Maintenance
 
 	.. |pypi-downloads| pypi-shield::
