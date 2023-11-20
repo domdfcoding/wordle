@@ -106,7 +106,7 @@ Can also create wordclouds from directories of source files or a single source f
 		:last-commit:
 		:alt: GitHub last commit
 
-	.. |maintained| maintained-shield:: 2022
+	.. |maintained| maintained-shield:: 2023
 		:alt: Maintenance
 
 	.. |pypi-downloads| pypi-shield::
