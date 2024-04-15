@@ -52,4 +52,4 @@ known_third_party = [
     "southwark",
     "wordcloud",
 ]
-known_first_party = "wordle"
+known_first_party = [ "wordle",]
