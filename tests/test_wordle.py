@@ -154,11 +154,7 @@ def test_github_repo_exclude_words(
 	image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes(), diff_threshold=3.5)
 
 
-@pillow_version_params
-def test_github_repo_frequency(
-		pillow_version,
-		counter_regression: CounterRegressionFixture,
-		):
+def test_github_repo_frequency(counter_regression: CounterRegressionFixture):
 	frequency = frequency_from_git(
 			"https://github.com/domdfcoding/domdf_python_tools",
 			sha="de815f593718e16c031bc70e9c24b5635c3144dc",

@@ -226,6 +226,7 @@
 //conda.anaconda.org/domdfcoding: 1
 //coveralls.io/github/domdfcoding/domdf_python_tools?branch=master: 1
 //domdf_python_tools.readthedocs.io/en/latest: 1
+//github.com/PyCQA/pydocstyle@5118faa7173b0e5bbc230c4adf628758e13605bf: 1
 //github.com/domdfcoding/domdf_python_tools: 1
 //github.com/domdfcoding/domdf_python_tools/actions?query=workflow%3A%22Docs+Check%22: 1
 //github.com/domdfcoding/domdf_python_tools/actions?query=workflow%3A%22Flake8%22: 1
@@ -242,6 +243,9 @@
 //github.com/domdfcoding/domdf_python_tools/workflows/Windows/badge.svg: 1
 //github.com/domdfcoding/domdf_python_tools/workflows/macOS/badge.svg: 1
 //github.com/domdfcoding/domdf_python_tools/workflows/mypy/badge.svg: 1
+//github.com/domdfcoding/flake8-quotes.git: 1
+//github.com/domdfcoding/flake8-rst-docstrings-sphinx.git@v2: 1
+//github.com/domdfcoding/flake8-rst-docstrings.git: 1
 //img.shields.io/codefactor/grade/github/domdfcoding/domdf_python_tools?logo=codefactor: 1
 //img.shields.io/conda/pn/domdfcoding/domdf_python_tools?label=conda%7Cplatform: 2
 //img.shields.io/conda/v/domdfcoding/domdf_python_tools?logo=anaconda: 2
@@ -7041,10 +7045,7 @@ girlfriend: 1
 girls: 1
 gis: 1
 git: 4
-git+https://github.com/PyCQA/pydocstyle@5118faa7173b0e5bbc230c4adf628758e13605bf: 1
-git+https://github.com/domdfcoding/flake8-quotes.git: 1
-git+https://github.com/domdfcoding/flake8-rst-docstrings-sphinx.git@v2: 1
-git+https://github.com/domdfcoding/flake8-rst-docstrings.git: 1
+git+https: 4
 git+https://github.com/domdfcoding/pytest-regressions-stubs: 1
 git_download.png: 1
 github: 2
