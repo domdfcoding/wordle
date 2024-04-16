@@ -4,6 +4,7 @@ matplotlib==3.2.2; platform_machine == "aarch64" and python_version == "3.6"
 matplotlib<3.4.0,>=3.2.2; platform_machine != "aarch64" or python_version > "3.6"
 numpy>=1.19.2; platform_system != "Windows"
 numpy!=1.19.4,>=1.19.3; platform_system == "Windows"
+pillow<10
 pygments>=2.7.4
 southwark>=0.8.0
-wordcloud>=1.8.0
+wordcloud<1.9.0,>=1.8.0
