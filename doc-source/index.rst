@@ -144,6 +144,7 @@ Can also create wordclouds from directories of source files or a single source f
 
 	contributing
 	Source
+	license
 
 .. sidebar-links::
 	:caption: Links
