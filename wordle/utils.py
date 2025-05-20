@@ -90,7 +90,7 @@ class _TemporaryDirectory(tempfile.TemporaryDirectory):
 		if sys.platform == "win32":
 			context = suppress(PermissionError, NotADirectoryError)
 		else:
-			context = nullcontext()
+			context = suppress(FileNotFoundError)
 
 		with context:
 			super().cleanup()

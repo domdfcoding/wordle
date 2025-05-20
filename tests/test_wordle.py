@@ -1,11 +1,17 @@
 # stdlib
+import io
+from functools import partial
+from pathlib import Path
 from typing import Mapping, Optional, Sequence, Union
 
 # 3rd party
 import PIL  # type: ignore[import]
 import pytest
 from apeye.requests_url import RequestsURL
+from coincidence.selectors import min_version, only_version
 from domdf_python_tools.paths import PathPlus
+from PIL import Image
+from pytest_regressions.common import perform_regression_check
 from pytest_regressions.data_regression import DataRegressionFixture
 from pytest_regressions.image_regression import ImageRegressionFixture
 
@@ -66,9 +72,9 @@ def test_c_source_file(
 
 
 @pillow_version_params
+@pytest.mark.usefixtures("pillow_version")
 def test_python_source_file(
-		pillow_version,
-		tmp_pathplus,
+		tmp_pathplus: PathPlus,
 		image_regression: ImageRegressionFixture,
 		counter_regression: CounterRegressionFixture,
 		):
@@ -117,8 +123,8 @@ def test_github_repo(
 
 
 @pillow_version_params
+@pytest.mark.usefixtures("pillow_version")
 def test_github_repo_exclude_tests(
-		pillow_version,
 		tmp_pathplus: PathPlus,
 		image_regression: ImageRegressionFixture,
 		):
@@ -136,8 +142,8 @@ def test_github_repo_exclude_tests(
 
 
 @pillow_version_params
+@pytest.mark.usefixtures("pillow_version")
 def test_github_repo_exclude_words(
-		pillow_version,
 		tmp_pathplus: PathPlus,
 		image_regression: ImageRegressionFixture,
 		):
@@ -154,6 +160,18 @@ def test_github_repo_exclude_words(
 	image_regression.check((tmp_pathplus / "git_wordcloud.png").read_bytes(), diff_threshold=3.5)
 
 
+@pytest.mark.parametrize(
+		"python_version",
+		[
+				pytest.param(
+						"3.6", marks=only_version(3.6, reason="Output differs with older Pygments on Python 3.6")
+						),
+				pytest.param(
+						"3.7", marks=min_version(3.6, reason="Output differs with older Pygments on Python 3.6")
+						),
+				]
+		)
+@pytest.mark.usefixtures("python_version")
 def test_github_repo_frequency(counter_regression: CounterRegressionFixture):
 	frequency = frequency_from_git(
 			"https://github.com/domdfcoding/domdf_python_tools",
