@@ -19,8 +19,8 @@ permissions:
 
 jobs:
   tests:
-    name: "ubuntu-20.04 / Python ${{ matrix.config.python-version }}"
-    runs-on: "ubuntu-20.04"
+    name: "ubuntu-22.04 / Python ${{ matrix.config.python-version }}"
+    runs-on: "ubuntu-22.04"
     continue-on-error: ${{ matrix.config.experimental }}
     env:
       USING_COVERAGE: '3.6,3.7,3.8,3.9,3.10'
@@ -29,7 +29,6 @@ jobs:
       fail-fast: False
       matrix:
         config:
-          - {python-version: "3.6", testenvs: "py36-pillow{8.1,8.2,8.3,8.4},build", experimental: False}
           - {python-version: "3.7", testenvs: "py37-pillow{8.1,8.2,8.3,8.4,9.0,9.1,9.2},build", experimental: False}
           - {python-version: "3.8", testenvs: "py38-pillow{8.1,8.2,8.3,8.4,9.0,9.1,9.2},build", experimental: False}
           - {python-version: "3.9", testenvs: "py39-pillow{8.1,8.2,8.3,8.4,9.0,9.1,9.2},build", experimental: False}
@@ -75,11 +74,12 @@ jobs:
         with:
           name: "coverage-${{ matrix.config.python-version }}"
           path: .coverage
+          include-hidden-files: true
 
 
   Coverage:
     needs: tests
-    runs-on: "ubuntu-20.04"
+    runs-on: "ubuntu-22.04"
     steps:
       - name: Checkout 🛎️
         uses: "actions/checkout@v4"
@@ -117,6 +117,7 @@ jobs:
         with:
           name: "combined-coverage"
           path: .coverage
+          include-hidden-files: true
 
       - name: "Upload Combined Coverage to Coveralls"
         if: ${{ steps.show.outcome != 'failure' }}
@@ -128,7 +129,7 @@ jobs:
   Deploy:
     needs: tests
 
-    runs-on: "ubuntu-20.04"
+    runs-on: "ubuntu-22.04"
     steps:
       - name: Checkout 🛎️
         uses: "actions/checkout@v4"
