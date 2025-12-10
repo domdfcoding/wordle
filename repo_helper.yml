@@ -8,7 +8,6 @@ license: 'MIT'
 short_desc: 'Create a wordcloud for a Git repository.'
 
 enable_conda: False
-python_deploy_version: 3.7
 min_coverage: 95
 use_whey: True
 
