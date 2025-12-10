@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Mapping, Optional, Sequence, Union
 
 # 3rd party
-import PIL  # type: ignore[import]
+import PIL  # type: ignore[import-untyped]
 import pytest
 from apeye.requests_url import RequestsURL
 from coincidence.selectors import min_version, only_version

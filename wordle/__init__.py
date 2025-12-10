@@ -41,9 +41,9 @@ from typing import Callable, Optional, Sequence, Union
 # 3rd party
 import numpy
 from domdf_python_tools.typing import PathLike
-from matplotlib.colors import Colormap  # type: ignore
+from matplotlib.colors import Colormap
 from numpy.random.mtrand import RandomState
-from wordcloud import WordCloud  # type: ignore
+from wordcloud import WordCloud  # type: ignore[import-untyped]
 
 # this package
 from wordle.frequency import frequency_from_directory, frequency_from_file, get_tokens
