@@ -13,12 +13,6 @@ use_whey: True
 
 # Versions to run tests for
 python_versions:
-  '3.6':
-   matrix_exclude:
-    pillow:
-     - 9.0
-     - 9.1
-     - 9.2
   '3.7':
   '3.8':
   '3.9':
@@ -33,9 +27,6 @@ classifiers:
 imgbot_ignore:
   - "examples/*"
   - "tests/test_wordle_/*"
-
-tox_requirements:
-  - "tox-pip-version>=0.0.7"
 
 third_party_version_matrix:
   pillow:
