@@ -37,7 +37,6 @@ from contextlib import redirect_stderr, suppress
 from typing import ContextManager, Optional
 
 # 3rd party
-from domdf_python_tools.compat import nullcontext
 from domdf_python_tools.typing import PathLike
 from dulwich.config import StackedConfig
 from southwark import clone, windows_clone_helper
@@ -84,7 +83,7 @@ def clone_into_tmpdir(
 
 class _TemporaryDirectory(tempfile.TemporaryDirectory):
 
-	def cleanup(self):
+	def cleanup(self) -> None:
 		context: ContextManager
 
 		if sys.platform == "win32":

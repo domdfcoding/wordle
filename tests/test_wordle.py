@@ -1,7 +1,4 @@
 # stdlib
-import io
-from functools import partial
-from pathlib import Path
 from typing import Mapping, Optional, Sequence, Union
 
 # 3rd party
@@ -10,8 +7,6 @@ import pytest
 from apeye.requests_url import RequestsURL
 from coincidence.selectors import min_version, only_version
 from domdf_python_tools.paths import PathPlus
-from PIL import Image
-from pytest_regressions.common import perform_regression_check
 from pytest_regressions.data_regression import DataRegressionFixture
 from pytest_regressions.image_regression import ImageRegressionFixture
 
@@ -27,12 +22,15 @@ PILLOW_VERSION = int(''.join(PIL.__version__.split('.')[:2]))
 pillow_version_params = pytest.mark.parametrize(
 		"pillow_version",
 		[
-				pytest.
-				param(81, marks=pytest.mark.skipif(PILLOW_VERSION >= 82, reason="Output differs on pillow 8.2.x")),
 				pytest.param(
-						82, marks=pytest.mark.skipif(PILLOW_VERSION < 82, reason="Output differs on pillow 8.2.x")
+						81,
+						marks=pytest.mark.skipif(PILLOW_VERSION >= 82, reason="Output differs on pillow 8.2.x"),
 						),
-				]
+				pytest.param(
+						82,
+						marks=pytest.mark.skipif(PILLOW_VERSION < 82, reason="Output differs on pillow 8.2.x"),
+						),
+				],
 		)
 
 
@@ -48,13 +46,13 @@ class CounterRegressionFixture(DataRegressionFixture):
 
 
 @pytest.fixture()
-def counter_regression(datadir, original_datadir, request):
+def counter_regression(datadir, original_datadir, request) -> CounterRegressionFixture:  # noqa: MAN001
 	return CounterRegressionFixture(datadir, original_datadir, request)
 
 
 @pillow_version_params
 def test_c_source_file(
-		pillow_version,
+		pillow_version: int,
 		tmp_pathplus: PathPlus,
 		image_regression: ImageRegressionFixture,
 		counter_regression: CounterRegressionFixture,
@@ -95,7 +93,7 @@ def test_python_source_file(
 
 @pillow_version_params
 def test_github_repo(
-		pillow_version,
+		pillow_version: int,
 		tmp_pathplus: PathPlus,
 		image_regression: ImageRegressionFixture,
 		):
@@ -134,7 +132,7 @@ def test_github_repo_exclude_tests(
 			"https://github.com/domdfcoding/domdf_python_tools",
 			outfile=tmp_pathplus / "git_wordcloud.svg",
 			sha="de815f593718e16c031bc70e9c24b5635c3144dc",
-			exclude_dirs=["tests"]
+			exclude_dirs=["tests"],
 			)
 	export_wordcloud(w, outfile=tmp_pathplus / "git_wordcloud.png")
 
@@ -153,7 +151,7 @@ def test_github_repo_exclude_words(
 			"https://github.com/domdfcoding/domdf_python_tools",
 			outfile=tmp_pathplus / "git_wordcloud.svg",
 			sha="de815f593718e16c031bc70e9c24b5635c3144dc",
-			exclude_words=["assert", "def", "self"]
+			exclude_words=["assert", "def", "self"],
 			)
 	export_wordcloud(w, outfile=tmp_pathplus / "git_wordcloud.png")
 
@@ -164,18 +162,20 @@ def test_github_repo_exclude_words(
 		"python_version",
 		[
 				pytest.param(
-						"3.6", marks=only_version(3.6, reason="Output differs with older Pygments on Python 3.6")
+						"3.6",
+						marks=only_version(3.6, reason="Output differs with older Pygments on Python 3.6"),
 						),
 				pytest.param(
-						"3.7", marks=min_version(3.6, reason="Output differs with older Pygments on Python 3.6")
+						"3.7",
+						marks=min_version(3.6, reason="Output differs with older Pygments on Python 3.6"),
 						),
-				]
+				],
 		)
 @pytest.mark.usefixtures("python_version")
 def test_github_repo_frequency(counter_regression: CounterRegressionFixture):
 	frequency = frequency_from_git(
 			"https://github.com/domdfcoding/domdf_python_tools",
 			sha="de815f593718e16c031bc70e9c24b5635c3144dc",
-			exclude_words=["assert", "def", "self"]
+			exclude_words=["assert", "def", "self"],
 			)
 	counter_regression.check(frequency)

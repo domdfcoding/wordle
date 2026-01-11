@@ -37,9 +37,9 @@ from string import punctuation
 from typing import Optional, Sequence
 
 # 3rd party
-import pygments.lexers  # type: ignore
-import pygments.token  # type: ignore
-import pygments.util  # type: ignore
+import pygments.lexers  # type: ignore[import-untyped]
+import pygments.token  # type: ignore[import-untyped]
+import pygments.util  # type: ignore[import-untyped]
 from domdf_python_tools.paths import PathPlus
 from domdf_python_tools.typing import PathLike
 
@@ -191,7 +191,7 @@ def frequency_from_directory(
 
 		exclude_dirs_list.append(str(d))
 
-	def is_excluded(path):
+	def is_excluded(path: pathlib.Path) -> bool:
 		for dir_name in exclude_dirs_list:
 			if re.match(dir_name, path.relative_to(directory).as_posix()):
 				return True

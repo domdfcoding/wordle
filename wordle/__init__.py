@@ -36,7 +36,7 @@ import pathlib
 import sys
 import time
 import typing
-from typing import Callable, Optional, Sequence, Union
+from typing import TYPE_CHECKING, Callable, NoReturn, Optional, Sequence, Union
 
 # 3rd party
 import numpy
@@ -48,6 +48,10 @@ from wordcloud import WordCloud  # type: ignore[import-untyped]
 # this package
 from wordle.frequency import frequency_from_directory, frequency_from_file, get_tokens
 from wordle.utils import _TemporaryDirectory, clone_into_tmpdir
+
+if TYPE_CHECKING:
+	# 3rd party
+	from PIL import Image  # type: ignore[import-untyped]
 
 __author__: str = "Dominic Davis-Foster"
 __copyright__: str = "2020 Dominic Davis-Foster"
@@ -147,7 +151,7 @@ class Wordle(WordCloud):
 	``font_path``, ``random_state`` which returns a PIL color for each word.
 	"""
 
-	def to_html(self):  # noqa: D102
+	def to_html(self) -> NoReturn:  # noqa: D102
 		raise NotImplementedError
 
 	def __init__(
@@ -220,7 +224,7 @@ class Wordle(WordCloud):
 			outfile: Optional[PathLike] = None,
 			*,
 			exclude_words: Sequence[str] = (),
-			max_font_size: Optional[int] = None
+			max_font_size: Optional[int] = None,
 			) -> "Wordle":
 		"""
 		Create a word_cloud from a source code file.
@@ -250,7 +254,7 @@ class Wordle(WordCloud):
 			*,
 			exclude_words: Sequence[str] = (),
 			exclude_dirs: Sequence[PathLike] = (),
-			max_font_size: Optional[int] = None
+			max_font_size: Optional[int] = None,
 			) -> "Wordle":
 		"""
 		Create a word_cloud from a directory of source code files.
@@ -291,7 +295,7 @@ class Wordle(WordCloud):
 			depth: Optional[int] = None,
 			exclude_words: Sequence[str] = (),
 			exclude_dirs: Sequence[PathLike] = (),
-			max_font_size: Optional[int] = None
+			max_font_size: Optional[int] = None,
 			) -> "Wordle":
 		"""
 		Create a word_cloud from a directory of source code files.
@@ -333,7 +337,7 @@ class Wordle(WordCloud):
 		random_state: Union[RandomState, int, None] = None,
 		color_func: Optional[Callable] = None,
 		colormap: Union[None, str, Colormap] = None,
-		) -> "Wordle":
+	) -> "Wordle":
 		"""
 		Recolour the existing layout.
 
@@ -352,14 +356,14 @@ class Wordle(WordCloud):
 
 		return super().recolor(random_state, color_func, colormap)
 
-	def to_array(self):  # pragma: no cover (typed wrapper)
+	def to_array(self) -> numpy.ndarray:  # pragma: no cover (typed wrapper)
 		"""
 		Returns the wordcloud image as numpy array.
 		"""
 
 		return super().to_array()
 
-	def to_file(self, filename: PathLike):
+	def to_file(self, filename: PathLike) -> "Wordle":
 		"""
 		Export the wordle to a file.
 
@@ -370,7 +374,7 @@ class Wordle(WordCloud):
 
 		return super().to_file(os.fspath(filename))
 
-	def to_image(self):
+	def to_image(self) -> "Image.Image":
 		"""
 		Returns the wordcloud as an image.
 		"""
