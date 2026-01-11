@@ -100,11 +100,11 @@ Can also create wordclouds from directories of source files or a single source f
 	:target: https://github.com/domdfcoding/wordle/commit/master
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2025
+.. |maintained| image:: https://img.shields.io/maintenance/yes/2026
 	:alt: Maintenance
 
 .. |pypi-downloads| image:: https://img.shields.io/pypi/dm/wordle
-	:target: https://pypi.org/project/wordle/
+	:target: https://pypistats.org/packages/wordle
 	:alt: PyPI - Downloads
 
 .. end shields
