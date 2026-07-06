@@ -142,7 +142,6 @@ class Wordle(WordCloud):
 		The algorithm might give more weight to the ranking of the words
 		than their actual frequencies, depending on the ``max_font_size`` and the
 		scaling heuristic.
-
 	"""
 
 	color_func: Callable
