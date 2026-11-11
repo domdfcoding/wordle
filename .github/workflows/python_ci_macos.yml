@@ -27,9 +27,9 @@ jobs:
       matrix:
         config:
           - {python-version: "3.7", os-ver: "15-intel", testenvs: "py37-pillow{8.1,8.2,8.3,8.4,9.0,9.1,9.2},build", experimental: False}
-          - {python-version: "3.8", os-ver: "14", testenvs: "py38-pillow{8.1,8.2,8.3,8.4,9.0,9.1,9.2},build", experimental: False}
-          - {python-version: "3.9", os-ver: "14", testenvs: "py39-pillow{8.1,8.2,8.3,8.4,9.0,9.1,9.2},build", experimental: False}
-          - {python-version: "3.10", os-ver: "14", testenvs: "py310-pillow{8.1,8.2,8.3,8.4,9.0,9.1,9.2},build", experimental: False}
+          - {python-version: "3.8", os-ver: "26", testenvs: "py38-pillow{8.1,8.2,8.3,8.4,9.0,9.1,9.2},build", experimental: False}
+          - {python-version: "3.9", os-ver: "26", testenvs: "py39-pillow{8.1,8.2,8.3,8.4,9.0,9.1,9.2},build", experimental: False}
+          - {python-version: "3.10", os-ver: "26", testenvs: "py310-pillow{8.1,8.2,8.3,8.4,9.0,9.1,9.2},build", experimental: False}
 
     steps:
       - name: Checkout 🛎️
